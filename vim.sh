@@ -112,3 +112,9 @@ for giturl in "${giturls[@]}"; do
   printf "Working on: %s\n\n" $giturl
   download "$giturl"
 done
+
+test -h "$HOME/.vimrc" && rm "$HOME/.vimrc" 
+test -h "$HOME/.gvimrc" && rm "$HOME/.gvimrc"
+
+ln -s $HOME/.vim/vimrc $HOME/.vimrc
+ln -s $HOME/.vim/gvimrc $HOME/.gvimrc
