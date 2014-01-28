@@ -57,6 +57,7 @@ let mapleader = ","
 nmap <Leader>s :up<CR>:!ispell -x %<CR>:e!<CR>
 " Mapping to switch off search highlighting
 nmap <silent> <Leader>h :nohlsearch<CR>
+nmap <silent> <Leader>, :nohlsearch<CR>
 
 " Switch between windows
 nmap <C-j> <C-w>j<C-w>_
@@ -135,8 +136,12 @@ if has("autocmd")
         \ if line("'\"") > 0 && line("'\"") <= line("$") |
         \   execute "normal g`\"" |
         \ endif
-    " Remove trailing whitespaces on save for python files
+    " Remove trailing whitespaces on save
     autocmd BufWritePre *.py :%s/\s\+$//e
+    autocmd BufWritePre *.clj :%s/\s\+$//e
+    autocmd BufWritePre *.js :%s/\s\+$//e
+    autocmd BufWritePre *.sh :%s/\s\+$//e
+    
 endif
 
 " Get rid of screen flash and beep
@@ -168,8 +173,10 @@ endif
 let g:netrw_cursorline = 0
 
 " Settings for VimClojure
-let vimclojure#HighlightBuiltins = 1
-let vimclojure#ParenRainbow = 0
+" let vimclojure#HighlightBuiltins = 1
+" let vimclojure#ParenRainbow = 0
+let g:clojure_align_multiline_strings = 1
+
 
 " toggle paste
 set pastetoggle=<F2>
