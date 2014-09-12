@@ -105,9 +105,6 @@ set winminwidth=0
 " convenient way to access buffers with tab
 set wildmenu wildmode=list:longest,full
 
-" enable jslint
-nmap <LocalLeader>j :setl makeprg=jslint\ %\|setl errorformat=%-P[%f],%A%>Problem\ at\ line\ %l\ character\ %c:\ %m,%Z%.%#,%-G\\s%#\|make<CR>
-
 " Help other people with your file if layout is not default
 iabbrev MODELINE vi:set sw=4 ts=4 sts=0 noet:<Esc>
 
