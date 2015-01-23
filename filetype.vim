@@ -23,7 +23,7 @@ autocmd! BufNewFile,bufRead *.ebuild set tabstop=2|set shiftwidth=2|set expandta
 autocmd! BufNewFile,bufRead *.vim set tabstop=4|set shiftwidth=4|set expandtab
 autocmd! BufNewFile,bufRead *.rs set tabstop=4|set shiftwidth=4|set expandtab
 autocmd! BufNewFile,bufRead *.ml,*.mli set tabstop=2|set shiftwidth=2|set expandtab
-autocmd! BufNewFile,bufRead *.clj,*.cljs setfiletype clojure
+autocmd! BufNewFile,bufRead *.clj,*.cljs,*.gk setfiletype clojure
 autocmd! BufNewFile,bufRead *.vala set tabstop=2|set shiftwidth=2|set expandtab
 augroup END
 
