@@ -203,3 +203,17 @@ set pastetoggle=<F2>
 
 " sudo
 cmap w!! w !sudo tee % >/dev/null
+
+" syntastic for python
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_checker_args='--ignore=E501,E225'
+
+let g:syntastic_mode_map = { 'mode': 'passive',
+            \ 'active_filetypes': [],
+            \ 'passive_filetypes': [] }
+
+let g:syntastic_auto_loc_list = 1
+
+" completion in ex mode
+set wildignorecase
+set fileignorecase
