@@ -6,7 +6,7 @@ giturls=(
   git://github.com/tpope/vim-unimpaired.git
   git://github.com/tpope/vim-commentary.git
   git://github.com/tpope/vim-eunuch.git
-  git://github.com/tpope/vim-vinager.git
+  git://github.com/tpope/vim-vinegar.git
   git://github.com/kien/ctrlp.vim.git
   git://github.com/msanders/snipmate.vim.git
   git://github.com/Lokaltog/vim-easymotion.git
