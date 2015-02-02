@@ -167,7 +167,7 @@ if !exists(":DiffOrig")
 endif
 
 " do not set cursor line in netrw
-let g:netrw_cursorline = 0
+let g:netrw_cursor = 0
 
 " Settings for clojure
 let g:clojure_align_multiline_strings = 1
