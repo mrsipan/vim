@@ -28,7 +28,6 @@ giturls=(
   git://github.com/mrsipan/vim-rust.git
   git://github.com/mrsipan/vim-rst.git
   git://github.com/mrsipan/vim-python.git
-  git://github.com/vim-pandoc/vim-pandoc.git
   git://github.com/tkztmk/vim-vala.git
   git://github.com/scrooloose/syntastic.git
   git://github.com/majutsushi/tagbar.git
@@ -113,7 +112,7 @@ for giturl in "${giturls[@]}"; do
   download "$giturl"
 done
 
-test -h "$HOME/.vimrc" && rm "$HOME/.vimrc" 
+test -h "$HOME/.vimrc" && rm "$HOME/.vimrc"
 test -h "$HOME/.gvimrc" && rm "$HOME/.gvimrc"
 
 ln -s $HOME/.vim/vimrc $HOME/.vimrc
