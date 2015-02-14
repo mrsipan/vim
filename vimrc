@@ -217,3 +217,6 @@ let g:syntastic_auto_loc_list = 1
 " completion in ex mode
 set wildignorecase
 set fileignorecase
+
+" store yankring history file in tmp
+let g:yankring_history_dir = '$HOME/.vim/tmp'
