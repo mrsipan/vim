@@ -138,7 +138,7 @@ if has("autocmd")
     autocmd BufWritePre *.clj :%s/\s\+$//e
     autocmd BufWritePre *.js :%s/\s\+$//e
     autocmd BufWritePre *.sh :%s/\s\+$//e
-    
+
 endif
 
 " Get rid of screen flash and beep
