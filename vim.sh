@@ -36,6 +36,7 @@ giturls=(
   git://github.com/guns/vim-clojure-static.git
   git://github.com/guns/vim-clojure-highlight.git
   git://github.com/jamessan/vim-gnupg.git
+  git://github.com/vim-ruby/vim-ruby.git
 )
 
 update_git() {
