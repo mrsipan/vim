@@ -215,8 +215,13 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 let g:syntastic_auto_loc_list = 1
 
 " completion in ex mode
-set wildignorecase
-set fileignorecase
+if exists("&wildignorecase")
+    set wildignorecase
+endif
+if exists("&fileignorecase")
+    set fileignorecase
+endif
+
 
 " store yankring history file in tmp
 let g:yankring_history_dir = '$HOME/.vim/tmp'
