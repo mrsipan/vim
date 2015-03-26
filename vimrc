@@ -30,6 +30,7 @@ set hidden
 " swap and backup files in one place
 set directory^=~/.vim/tmp//
 set backupdir^=~/.vim/tmp//
+set autoread
 
 " Use syntax highlighting when terminal allows it
 if &t_Co > 2 || has("gui_running")
