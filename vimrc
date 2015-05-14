@@ -53,7 +53,7 @@ let c_syntax_for_h = 1
 let is_kornshell = 1
 
 " leader ',' and localleader '\'
-let mapleader = ","
+let mapleader = "\<Space>"
 " Mapping for spell checker
 nmap <Leader>s :up<CR>:!ispell -x %<CR>:e!<CR>
 " Mapping to switch off search highlighting
