@@ -226,3 +226,6 @@ endif
 
 " store yankring history file in tmp
 let g:yankring_history_dir = '$HOME/.vim/tmp'
+
+" Reload file
+nmap gR :e!<CR>
