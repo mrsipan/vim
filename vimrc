@@ -178,23 +178,16 @@ autocmd BufEnter *.clj RainbowParenthesesToggle
 autocmd BufLeave *.clj RainbowParenthesesToggle
 
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+     \ ['102', '#8c8c8c'],
+     \ ['110', '#93a8c6'],
+     \ ['143', '#b0b1a3'],
+     \ ['108', '#97b098'],
+     \ ['146', '#aebed8'],
+     \ ['145', '#b0b0b3'],
+     \ ['110', '#90a890'],
+     \ ['148', '#a2b6da'],
+     \ ['145', '#9cb6ad']
+     \ ]
 
 let g:rbpt_max = 16
 " let g:rbpt_loadcmd_toggle = 0
@@ -235,3 +228,5 @@ nmap gR :e!<CR>
 " vnoremap <silent> p p`]
 " nnoremap <silent> p p`]
 
+highlight ExtraWhitespace ctermbg=188 guibg=#d2d2d2
+match ExtraWhitespace /\s\+$/
