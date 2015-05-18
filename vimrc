@@ -229,3 +229,9 @@ let g:yankring_history_dir = '$HOME/.vim/tmp'
 
 " Reload file
 nmap gR :e!<CR>
+
+" " paste and go to end
+" vnoremap <silent> y y`]
+" vnoremap <silent> p p`]
+" nnoremap <silent> p p`]
+

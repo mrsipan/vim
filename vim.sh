@@ -3,24 +3,26 @@
 declare -a giturls
 giturls=(
   git://github.com/tpope/vim-surround.git
-  git://github.com/tpope/vim-unimpaired.git
   git://github.com/tpope/vim-commentary.git
-  git://github.com/tpope/vim-eunuch.git
   git://github.com/tpope/vim-vinegar.git
+  git://github.com/tpope/vim-repeat.git
+  git://github.com/tpope/vim-fireplace.git
+  git://github.com/tpope/vim-classpath.git
+  git://github.com/tpope/vim-sexp-mappings-for-regular-people.git
+  git://github.com/tpope/vim-endwise.git
+  git://github.com/tpope/vim-fugitive.git
+  git://github.com/guns/vim-clojure-static.git
+  git://github.com/guns/vim-clojure-highlight.git
+  git://github.com/guns/vim-sexp.git
+  git://github.com/jamessan/vim-gnupg.git
   git://github.com/kien/ctrlp.vim.git
   git://github.com/msanders/snipmate.vim.git
   git://github.com/Lokaltog/vim-easymotion.git
-  git://github.com/tpope/vim-fugitive.git
-  git://github.com/kien/tabman.vim.git
   git://github.com/kien/rainbow_parentheses.vim.git
-  git://github.com/tpope/vim-obsession.git
   git://github.com/jpo/vim-railscasts-theme.git
   git://github.com/mrsipan/vim-sipan-theme.git
   git://github.com/mrsipan/vim-simple8-theme.git
   git://github.com/nelstrom/vim-mac-classic-theme.git
-  git://github.com/tpope/vim-pastie.git
-  git://github.com/tpope/vim-repeat.git
-  git://github.com/tpope/vim-abolish.git
   git://github.com/vim-scripts/YankRing.vim.git
   git://github.com/vim-scripts/Auto-Pairs.git
   git://github.com/derekwyatt/vim-scala.git
@@ -30,13 +32,8 @@ giturls=(
   git://github.com/mrsipan/vim-python.git
   git://github.com/tkztmk/vim-vala.git
   git://github.com/scrooloose/syntastic.git
-  git://github.com/majutsushi/tagbar.git
-  git://github.com/tpope/vim-fireplace.git
-  git://github.com/tpope/vim-classpath.git
-  git://github.com/guns/vim-clojure-static.git
-  git://github.com/guns/vim-clojure-highlight.git
-  git://github.com/jamessan/vim-gnupg.git
   git://github.com/vim-ruby/vim-ruby.git
+  git://github.com/AndrewRadev/splitjoin.vim.git
 )
 
 update_git() {
