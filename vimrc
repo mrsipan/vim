@@ -174,6 +174,9 @@ let g:netrw_cursor = 0
 let g:clojure_align_multiline_strings = 1
 
 autocmd Syntax clojure RainbowParenthesesLoadRound
+autocmd Syntax clojure RainbowParenthesesLoadSquare
+autocmd Syntax clojure RainbowParenthesesLoadBraces
+autocmd Syntax clojure RainbowParenthesesLoadChevrons
 autocmd BufEnter *.clj RainbowParenthesesToggle
 autocmd BufLeave *.clj RainbowParenthesesToggle
 
