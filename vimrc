@@ -139,6 +139,8 @@ if has("autocmd")
     autocmd BufWritePre *.clj :%s/\s\+$//e
     autocmd BufWritePre *.js :%s/\s\+$//e
     autocmd BufWritePre *.sh :%s/\s\+$//e
+    autocmd BufWritePre *.rb :%s/\s\+$//e
+    autocmd BufWritePre *.scala :%s/\s\+$//e
 
 endif
 
