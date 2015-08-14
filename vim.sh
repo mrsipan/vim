@@ -34,6 +34,7 @@ giturls=(
   git://github.com/scrooloose/syntastic.git
   git://github.com/vim-ruby/vim-ruby.git
   git://github.com/AndrewRadev/splitjoin.vim.git
+  git@github.com:fatih/vim-go.git
 )
 
 update_git() {
