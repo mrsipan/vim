@@ -58,7 +58,6 @@ let mapleader = "\<Space>"
 nmap <Leader>s :up<CR>:!ispell -x %<CR>:e!<CR>
 " Mapping to switch off search highlighting
 nmap <silent> <Leader>h :nohlsearch<CR>
-nmap <silent> <Leader>, :nohlsearch<CR>
 
 " Switch between windows
 nmap <C-j> <C-w>j<C-w>_
@@ -82,7 +81,7 @@ nmap Q :q<CR>
 
 " Make <Space> in normal mode go down half a page rather than
 " left a character
-noremap <Space> <C-d>
+noremap <Tab> <C-d>
 noremap <BS> <C-u>
 
 " CtrlP to open buffers and files
