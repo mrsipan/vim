@@ -233,6 +233,9 @@ nmap gR :e!<CR>
 " vnoremap <silent> p p`]
 " nnoremap <silent> p p`]
 
+" highlight last insert
+nnoremap gV `[v`]
+
 highlight ExtraWhitespace ctermbg=188 guibg=#d2d2d2
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
