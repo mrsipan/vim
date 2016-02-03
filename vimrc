@@ -243,4 +243,5 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " paredit enabled manually
-let g:paredit_mode=0
+let g:paredit_mode = 0
+let g:paredit_electric_return = 1
