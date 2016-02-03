@@ -8,12 +8,10 @@ giturls=(
   git://github.com/tpope/vim-repeat.git
   git://github.com/tpope/vim-fireplace.git
   git://github.com/tpope/vim-classpath.git
-  git://github.com/tpope/vim-sexp-mappings-for-regular-people.git
   git://github.com/tpope/vim-endwise.git
   git://github.com/tpope/vim-fugitive.git
   git://github.com/guns/vim-clojure-static.git
   git://github.com/guns/vim-clojure-highlight.git
-  git://github.com/guns/vim-sexp.git
   git://github.com/jamessan/vim-gnupg.git
   git://github.com/kien/ctrlp.vim.git
   git://github.com/msanders/snipmate.vim.git
@@ -35,6 +33,7 @@ giturls=(
   git://github.com/vim-ruby/vim-ruby.git
   git://github.com/AndrewRadev/splitjoin.vim.git
   git@github.com:fatih/vim-go.git
+  git@github.com:kovisoft/paredit.git
 )
 
 update_git() {

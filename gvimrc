@@ -16,7 +16,8 @@ elseif has("gui_kde")
 elseif has("gui_win32")
     set guifont=Lucida_Console:h10
 elseif has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h15
+    " set guifont=Menlo:h15
+    set guifont=Droid\ Sans\ Mono\ Slashed:h13
     set antialias
 else
     set guifont=-*-lucidatypewriter-medium-r-*-*-12-*-75-*
