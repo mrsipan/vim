@@ -119,13 +119,15 @@ if has("autocmd")
     " Get rid of the annoying reverse for HTML italic.
     autocmd FileType html,xhtml hi htmlItalic term=underline cterm=underline
     " Java, JavaScript, Perl, Python and Tcl indent.
-    autocmd FileType java,javascript,perl,python,tcl,vim,go setl sw=4 sts=4 et
+    autocmd FileType java,javascript,perl,python,tcl,vim,go,groovy setl sw=4 sts=4 et
     " Ada indent.
     autocmd FileType ada setlocal sw=3 sts=3 et
     " Expand tab in Scheme and Lisp to preserve alignment.
     autocmd FileType lisp,scheme setlocal et
     " Python doctest indent.
     autocmd FileType rst,cfg setlocal sw=4 sts=4 et tw=72
+    " Yaml
+    autocmd FileType yml,yaml setlocal sw=2 sts=2 et
     " Shell scripts
     autocmd FileType cpp,sh,spec,clj,lua,pp,rs setl tabstop=2 sw=2 et
     " When editing a file, always jump to the last known cursor position.
