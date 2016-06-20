@@ -32,8 +32,10 @@ giturls=(
   git://github.com/scrooloose/syntastic.git
   git://github.com/vim-ruby/vim-ruby.git
   git://github.com/AndrewRadev/splitjoin.vim.git
-  git@github.com:fatih/vim-go.git
-  git@github.com:kovisoft/paredit.git
+  git://github.com/fatih/vim-go.git
+  git://github.com/guns/vim-sexp.git
+  git://github.com/tommcdo/vim-exchange.git
+  git://github.com/tpope/vim-sexp-mappings-for-regular-people.git
 )
 
 update_git() {
