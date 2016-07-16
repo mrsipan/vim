@@ -86,10 +86,13 @@ noremap <BS> <C-u>
 
 " CtrlP to open buffers and files
 nmap <Leader>b :CtrlPBuffer<CR>
+nmap <Leader>ph :CtrlP ~<CR>
+nmap <Leader>pe :CtrlP /etc<CR>
+nmap <Leader>pl :CtrlP /var/log<CR>
 "nmap <Leader>f :CtrlP<CR>
 let g:ctrlp_map = '<Leader>f'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = ''
+let g:ctrlp_working_path_mode = 'rw'
 let g:ctrlp_show_hidden = 1
 
 " set wildignore=*.so,*.swp,*.zip
