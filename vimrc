@@ -19,7 +19,7 @@ set showcmd
 set showmatch
 set showmode
 set spelllang=en_us
-set statusline=%<\ %n:%f\ %m%r%y%=%-35.(L:\ %l/%L,\ C:\ %c%V\ (%P)%)
+set statusline=%<\%n:%f\ %m%r%y%=%-10.(%{fugitive#statusline()}\ L:\%l/%L\ C:\%c%V\ %P%)
 set laststatus=2
 " set tabpagemax=20
 " split a window rightward and downward
@@ -89,7 +89,7 @@ nmap <Leader>b :CtrlPBuffer<CR>
 nmap <Leader>fh :CtrlP ~<CR>
 nmap <Leader>fe :CtrlP /etc<CR>
 nmap <Leader>fl :CtrlP /var/log<CR>
-"nmap <Leader>f :CtrlP<CR>
+
 let g:ctrlp_map = '<Leader>ff'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'rw'
