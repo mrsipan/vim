@@ -14,7 +14,7 @@ giturls=(
   git://github.com/guns/vim-clojure-highlight.git
   git://github.com/jamessan/vim-gnupg.git
   git://github.com/kien/ctrlp.vim.git
-  git://github.com/garbas/snipmate.vim.git
+  git://github.com/garbas/vim-snipmate.git
   git://github.com/Lokaltog/vim-easymotion.git
   git://github.com/kien/rainbow_parentheses.vim.git
   git://github.com/mrsipan/vim-sipan-theme.git
@@ -34,6 +34,8 @@ giturls=(
   git://github.com/tommcdo/vim-exchange.git
   git://github.com/tpope/vim-sexp-mappings-for-regular-people.git
   git://github.com/airblade/vim-gitgutter.git
+  git://github.com/MarcWeber/vim-addon-mw-utils.git
+  git://github.com/tomtom/tlib_vim.git
 )
 
 update_git() {
