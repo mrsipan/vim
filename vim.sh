@@ -14,7 +14,7 @@ giturls=(
   git://github.com/guns/vim-clojure-highlight.git
   git://github.com/jamessan/vim-gnupg.git
   git://github.com/kien/ctrlp.vim.git
-  git://github.com/msanders/snipmate.vim.git
+  git://github.com/garbas/snipmate.vim.git
   git://github.com/Lokaltog/vim-easymotion.git
   git://github.com/kien/rainbow_parentheses.vim.git
   git://github.com/mrsipan/vim-sipan-theme.git
