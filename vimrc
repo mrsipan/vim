@@ -87,8 +87,12 @@ noremap <BS> <C-u>
 " CtrlP to open buffers and files
 nmap <Leader>b :CtrlPBuffer<CR>
 nmap <Leader>fh :CtrlP ~<CR>
+nmap <Leader>ft :CtrlP ~/proj<CR>
 nmap <Leader>fe :CtrlP /etc<CR>
 nmap <Leader>fl :CtrlP /var/log<CR>
+
+nmap <A-r> :CtrlPClearCache<CR>
+
 
 let g:ctrlp_map = '<Leader>ff'
 let g:ctrlp_cmd = 'CtrlP'
@@ -252,3 +256,11 @@ autocmd BufWinLeave * call clearmatches()
 " paredit enabled manually
 let g:paredit_mode = 0
 let g:paredit_electric_return = 1
+
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag -l --nocolor --hidden -g "" %s'
+    let g:ctrlp_use_caching = 0
+elseif executable('pss')
+
+endif
