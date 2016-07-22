@@ -90,13 +90,14 @@ nmap <Leader>fh :CtrlP ~<CR>
 nmap <Leader>ft :CtrlP ~/proj<CR>
 nmap <Leader>fe :CtrlP /etc<CR>
 nmap <Leader>fl :CtrlP /var/log<CR>
+nmap <Leader>fd :CtrlP 
 
 nmap <A-r> :CtrlPClearCache<CR>
 
 
 let g:ctrlp_map = '<Leader>ff'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 
 " set wildignore=*.so,*.swp,*.zip
@@ -260,7 +261,7 @@ let g:paredit_electric_return = 1
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag -l --nocolor --hidden -g "" %s'
-    let g:ctrlp_use_caching = 0
+    let g:ctrlp_use_caching = 1
 elseif executable('pss')
 
 endif
