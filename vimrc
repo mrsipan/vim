@@ -261,7 +261,7 @@ let g:paredit_electric_return = 1
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag -l --nocolor --hidden -g "" %s'
-    let g:ctrlp_use_caching = 1
 elseif executable('pss')
-
+    set grepprg=pss\ --nocolor
+    let g:ctrlp_user_command = 'pss --ignore-dir="eggs,site-packages,tmp.*" --py -tf /tmp'
 endif
