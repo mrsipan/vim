@@ -263,5 +263,5 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag -l --nocolor --hidden -g "" %s'
 elseif executable('pss')
     set grepprg=pss\ --nocolor
-    let g:ctrlp_user_command = 'pss --ignore-dir="eggs,site-packages,tmp.*" --py -tf /tmp'
+    let g:ctrlp_user_command = 'pss --ignore-dir="eggs,site-packages,_tmp,.cache" -f %s'
 endif
