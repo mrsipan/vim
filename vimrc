@@ -267,4 +267,4 @@ elseif executable('pss')
     let g:ctrlp_user_command = 'pss --ignore-dir="eggs,site-packages,_tmp,.cache" -f %s'
  endif
 
-let g:gitgutter_sign_modified = 'ǂ'
+let g:gitgutter_sign_modified = '≠'
