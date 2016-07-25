@@ -26,6 +26,6 @@ autocmd! BufNewFile,bufRead *.ml,*.mli,*.rb set tabstop=2|set shiftwidth=2|set e
 autocmd! BufNewFile,bufRead *.clj,*.cljs,*.gk,*.pxi setfiletype clojure
 autocmd! BufNewFile,bufRead *.vala set tabstop=4|set shiftwidth=4|set expandtab
 autocmd! BufNewFile,bufRead *.go set tabstop=4|set shiftwidth=4
-autocmd! BufNewFile,bufRead *.json set tabstop=4|set shiftwidth=4|set expandtab
+autocmd! BufNewFile,bufRead *.json set tabstop=2|set shiftwidth=2|set expandtab
 augroup END
 
