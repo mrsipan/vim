@@ -261,7 +261,10 @@ let g:paredit_electric_return = 1
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag -l --nocolor --hidden -g "" %s'
+    let g:gitgutter_grep_command = 'ag --nocolor'
 elseif executable('pss')
     set grepprg=pss\ --nocolor
     let g:ctrlp_user_command = 'pss --ignore-dir="eggs,site-packages,_tmp,.cache" -f %s'
-endif
+ endif
+
+let g:gitgutter_sign_modified = '!'
