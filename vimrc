@@ -270,3 +270,5 @@ elseif executable('pss')
  endif
 
 let g:gitgutter_sign_modified = '≠'
+
+nmap <Leader>q @q
