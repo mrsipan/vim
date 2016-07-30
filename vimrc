@@ -55,7 +55,7 @@ let is_kornshell = 1
 " leader ',' and localleader '\'
 let mapleader = "\<Space>"
 " Mapping for spell checker
-nmap <Leader>s :up<CR>:!ispell -x %<CR>:e!<CR>
+nmap <Leader>cs :up<CR>:!ispell -x %<CR>:e!<CR>
 " Mapping to switch off search highlighting
 nmap <silent> <Leader>h :nohlsearch<CR>
 
@@ -226,7 +226,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_error_symbol = '➔'
 let g:syntastic_warning_symbol = '¡'
 
-nnoremap <Leader>gc :SyntasticCheck<CR>
+nnoremap <Leader>cx :SyntasticCheck<CR>
 
 " completion in ex mode
 if exists("&wildignorecase")
