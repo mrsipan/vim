@@ -85,12 +85,12 @@ noremap <Tab> <C-d>
 noremap <BS> <C-u>
 
 " CtrlP to open buffers and files
-nmap <Leader>b :CtrlPBuffer<CR>
-nmap <Leader>fh :CtrlP ~<CR>
-nmap <Leader>ft :CtrlP ~/proj<CR>
-nmap <Leader>fe :CtrlP /etc<CR>
-nmap <Leader>fl :CtrlP /var/log<CR>
-nmap <Leader>fd :CtrlP 
+nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>fh :CtrlP ~<CR>
+nnoremap <Leader>ft :CtrlP ~/proj<CR>
+nnoremap <Leader>fe :CtrlP /etc<CR>
+nnoremap <Leader>fl :CtrlP /var/log<CR>
+nnoremap <Leader>fd :CtrlP
 
 nmap <A-r> :CtrlPClearCache<CR>
 
@@ -223,8 +223,10 @@ let g:syntastic_mode_map = { 'mode': 'passive',
             \ 'passive_filetypes': [] }
 
 let g:syntastic_auto_loc_list = 1
+let g:syntastic_error_symbol = '➔'
+let g:syntastic_warning_symbol = '¡'
 
-nmap <Leader>gc :SyntasticCheck<CR>
+nnoremap <Leader>gc :SyntasticCheck<CR>
 
 " completion in ex mode
 if exists("&wildignorecase")
@@ -270,5 +272,6 @@ elseif executable('pss')
  endif
 
 let g:gitgutter_sign_modified = '≠'
+let g:gitgutter_sign_modified_removed = '±'
 
-nmap <Leader>q @q
+nnoremap <Leader>q @q
