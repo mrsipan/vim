@@ -276,8 +276,7 @@ let g:gitgutter_sign_modified_removed = '±'
 
 nnoremap <Leader>q @q
 
-let g:UltiSnipsSnippetsDir = '~/.snips/vim'
-
+let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
 let g:ulti_expand_or_jump_res = 0
 
 function! Ulti_ExpandOrJump_and_getRes()
