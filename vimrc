@@ -217,6 +217,7 @@ cmap w!! w !sudo tee % >/dev/null
 " syntastic for python
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_checker_args='--ignore=E501,E225'
+let g:syntastic_python_flake8_exec='~/opt/bin/flake8'
 
 let g:syntastic_mode_map = { 'mode': 'passive',
             \ 'active_filetypes': [],
