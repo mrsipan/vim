@@ -277,11 +277,3 @@ let g:gitgutter_sign_modified_removed = '±'
 nnoremap <Leader>q @q
 
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
-let g:ulti_expand_or_jump_res = 0
-
-function! Ulti_ExpandOrJump_and_getRes()
-    call UltiSnips#ExpandSnippetOrJump()
-    return g:ulti_expand_or_jump_res
-endfunction
-
-inoremap <CR> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":"\n"<CR>

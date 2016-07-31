@@ -34,6 +34,7 @@ giturls=(
   git://github.com/tpope/vim-sexp-mappings-for-regular-people.git
   git://github.com/airblade/vim-gitgutter.git
   git://github.com/SirVer/ultisnips.git
+  git://github.com/tpope/vim-unimpaired.git
 )
 
 update_git() {
