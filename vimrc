@@ -81,8 +81,12 @@ nmap Q :q<CR>
 
 " Make <Space> in normal mode go down half a page rather than
 " left a character
-noremap <Tab> <C-d>
-noremap <BS> <C-u>
+nnoremap <Tab> <C-d>
+nnoremap <BS> <C-u>
+" ultisnips is overriden this:
+vnoremap <Tab> <C-d>
+autocmd VimEnter * vmap <Tab> <C-d>
+vnoremap <BS> <C-u>
 
 " CtrlP to open buffers and files
 nnoremap <Leader>b :CtrlPBuffer<CR>
@@ -215,9 +219,13 @@ set pastetoggle=<F2>
 cmap w!! w !sudo tee % >/dev/null
 
 " syntastic for python
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_checker_args='--ignore=E501,E225'
-let g:syntastic_python_flake8_exec='~/opt/bin/flake8'
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checker_args = '--ignore=E501,E225'
+let g:syntastic_python_flake8_exec = '~/opt/bin/flake8'
+
+" syntastic for ruby
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_ruby_rubocop_exec = '/opt/chefdk/bin/rubocop'
 
 let g:syntastic_mode_map = { 'mode': 'passive',
             \ 'active_filetypes': [],
