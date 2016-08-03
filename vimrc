@@ -234,8 +234,8 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_error_symbol = '➔'
 let g:syntastic_warning_symbol = '➔'
-let g:syntastic_style_error_symbol = '¡'
-let g:syntastic_style_warning_symbol = '¡'
+let g:syntastic_style_error_symbol = '◆'
+let g:syntastic_style_warning_symbol = '◆'
 
 nnoremap <Leader>cx :SyntasticCheck<CR>
 nnoremap <Leader>cr :SyntasticReset<CR>
