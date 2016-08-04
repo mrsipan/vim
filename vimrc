@@ -289,3 +289,5 @@ let g:gitgutter_sign_modified_removed = '±'
 nnoremap <Leader>q @q
 
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
+
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
