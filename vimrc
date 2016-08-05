@@ -290,4 +290,40 @@ nnoremap <Leader>q @q
 
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
 
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+" let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+" From ranger's examples dir
+function! RangeChooser()
+    let temp = tempname()
+
+    if has("gui_running")
+        exec 'silent !xterm -e ranger --choosefiles=' . shellescape(temp)
+    else
+        exec 'silent !ranger --choosefiles=' . shellescape(temp)
+    endif
+
+    if !filereadable(temp)
+        redraw!
+        return
+    endif
+
+    let names = readfile(temp)
+
+    if empty(names)
+        redraw!
+        return
+    endif
+
+    " Edit the first item.
+    exec 'edit ' . fnameescape(names[0])
+
+    " Add any remaning items to the arg list/buffer list.
+    for name in names[1:]
+        exec 'argadd ' . fnameescape(name)
+    endfor
+    redraw!
+
+endfunction
+
+command! -bar RangerChooser call RangeChooser()
+nnoremap <leader>fo :<C-U>RangerChooser<CR>
