@@ -290,7 +290,7 @@ nnoremap <Leader>q @q
 
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
 
-" let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " From ranger's examples dir
 function! RangeChooser()
