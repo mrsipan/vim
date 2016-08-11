@@ -36,6 +36,7 @@ giturls=(
   git://github.com/SirVer/ultisnips.git
   git://github.com/tpope/vim-unimpaired.git
   git://github.com/mrsipan/ctrlp-py-matcher.git
+  git://github.com/mileszs/ack.vim.git
 )
 
 update_git() {

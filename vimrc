@@ -327,3 +327,7 @@ endfunction
 
 command! -bar RangerChooser call RangeChooser()
 nnoremap <leader>fo :<C-U>RangerChooser<CR>
+
+" Create a scratch buffer
+nnoremap <Leader>fh  :vnew<cr>:setlocal buftype=nofile bufhidden=wipe nobuflisted<cr>
+:command! -nargs=1 KeepScratch setlocal buftype= | file <args> | w
