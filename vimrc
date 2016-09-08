@@ -237,8 +237,8 @@ let g:syntastic_warning_symbol = '➔'
 let g:syntastic_style_error_symbol = '◆'
 let g:syntastic_style_warning_symbol = '◆'
 
-nnoremap <Leader>cx :SyntasticCheck<CR>
-nnoremap <Leader>cr :SyntasticReset<CR>
+nnoremap <Leader>cp :SyntasticCheck<CR>
+nnoremap <Leader>cP :SyntasticReset<CR>
 
 " completion in ex mode
 if exists("&wildignorecase")
