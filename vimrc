@@ -156,6 +156,7 @@ if has("autocmd")
     autocmd BufWritePre *.sh :%s/\s\+$//e
     autocmd BufWritePre *.rb :%s/\s\+$//e
     autocmd BufWritePre *.scala :%s/\s\+$//e
+    autocmd BufWritePre *.groovy :%s/\s\+$//e
 
 endif
 
