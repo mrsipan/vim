@@ -287,6 +287,9 @@ elseif executable('pss')
 let g:gitgutter_sign_modified = '≠'
 let g:gitgutter_sign_modified_removed = '±'
 
+let g:gitgutter_enabled = 0
+nmap <leader>gu :GitGutterToggle<CR>
+
 nnoremap <Leader>q @q
 
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
@@ -337,4 +340,10 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 elseif executable('pss')
     let g:ackprg = 'pss --nocolor'
+endif
+
+if executable('opam')
+    let s:merlin = substitute(system('opam config var share'), '\n$', '', '''') . "/merlin"
+    execute "set rtp+=" . s:merlin . "/vim"
+    let g:syntastic_ocaml_checkers = ['merlin']
 endif
