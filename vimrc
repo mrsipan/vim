@@ -293,6 +293,9 @@ nmap <leader>gu :GitGutterToggle<CR>
 nnoremap <Leader>q @q
 
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsSnippetDirectories = ["UltiSnips", "mrsipan_ultisnips"]
 
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
