@@ -8,7 +8,6 @@ giturls=(
   git://github.com/SirVer/ultisnips.git
   git://github.com/airblade/vim-gitgutter.git
   git://github.com/derekwyatt/vim-scala.git
-  git://github.com/fatih/vim-go.git
   git://github.com/guns/vim-clojure-highlight.git
   git://github.com/guns/vim-clojure-static.git
   git://github.com/guns/vim-sexp.git
