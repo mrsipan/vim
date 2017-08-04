@@ -220,26 +220,26 @@ set pastetoggle=<F2>
 cmap w!! w !sudo tee % >/dev/null
 
 " syntastic for python
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_checker_args = '--ignore=E501,E225'
-let g:syntastic_python_flake8_exec = '~/opt/bin/flake8'
+" let g:syntastic_python_checkers = ['flake8']
+" let g:syntastic_python_checker_args = '--ignore=E501,E225'
+" let g:syntastic_python_flake8_exec = '~/opt/bin/flake8'
 
-" syntastic for ruby
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_ruby_rubocop_exec = '/opt/chefdk/bin/rubocop'
+" " syntastic for ruby
+" let g:syntastic_ruby_checkers = ['rubocop']
+" let g:syntastic_ruby_rubocop_exec = '/opt/chefdk/bin/rubocop'
 
-let g:syntastic_mode_map = { 'mode': 'passive',
-            \ 'active_filetypes': [],
-            \ 'passive_filetypes': [] }
+" let g:syntastic_mode_map = { 'mode': 'passive',
+"             \ 'active_filetypes': [],
+"             \ 'passive_filetypes': [] }
 
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_error_symbol = '➔'
-let g:syntastic_warning_symbol = '➔'
-let g:syntastic_style_error_symbol = '◆'
-let g:syntastic_style_warning_symbol = '◆'
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_error_symbol = '➔'
+" let g:syntastic_warning_symbol = '➔'
+" let g:syntastic_style_error_symbol = '◆'
+" let g:syntastic_style_warning_symbol = '◆'
 
-nnoremap <Leader>cp :SyntasticCheck<CR>
-nnoremap <Leader>cP :SyntasticReset<CR>
+" nnoremap <Leader>cp :SyntasticCheck<CR>
+" nnoremap <Leader>cP :SyntasticReset<CR>
 
 " completion in ex mode
 if exists("&wildignorecase")
@@ -354,4 +354,7 @@ endif
 let g:elm_format_autosave = 1
 let g:elm_setup_keybindings = 0
 
-let g:elm_syntastic_show_warnings = 1
+" let g:elm_syntastic_show_warnings = 1
+
+autocmd bufwritepost *.js silent !standard --fix %
+set autoread

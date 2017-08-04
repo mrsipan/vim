@@ -8,6 +8,7 @@ giturls=(
   git://github.com/SirVer/ultisnips.git
   git://github.com/airblade/vim-gitgutter.git
   git://github.com/derekwyatt/vim-scala.git
+  git://github.com/fsharp/vim-fsharp.git
   git://github.com/guns/vim-clojure-highlight.git
   git://github.com/guns/vim-clojure-static.git
   git://github.com/guns/vim-sexp.git
@@ -21,8 +22,9 @@ giturls=(
   git://github.com/mrsipan/vim-simple8-theme.git
   git://github.com/mrsipan/vim-sipan-theme.git
   git://github.com/rodjek/vim-puppet.git
-  git://github.com/scrooloose/syntastic.git
   git://github.com/tkztmk/vim-vala.git
+  git://github.com/pangloss/vim-javascript.git
+  git://github.com/tmhedberg/matchit.git
   git://github.com/tommcdo/vim-exchange.git
   git://github.com/tpope/vim-classpath.git
   git://github.com/tpope/vim-commentary.git
@@ -38,7 +40,7 @@ giturls=(
   git://github.com/vim-ruby/vim-ruby.git
   git://github.com/vim-scripts/Auto-Pairs.git
   git://github.com/vim-scripts/YankRing.vim.git
-  git://github.com/fsharp/vim-fsharp.git
+  git://github.com/w0rp/ale.git
 )
 
 update_git() {
