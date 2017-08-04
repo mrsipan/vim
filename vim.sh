@@ -13,7 +13,7 @@ giturls=(
   git://github.com/guns/vim-clojure-static.git
   git://github.com/guns/vim-sexp.git
   git://github.com/jamessan/vim-gnupg.git
-  git://github.com/kien/ctrlp.vim.git
+  git://github.com/ctrlpvim/ctrlp.vim.git
   git://github.com/kien/rainbow_parentheses.vim.git
   git://github.com/mileszs/ack.vim.git
   git://github.com/mrsipan/ctrlp-py-matcher.git

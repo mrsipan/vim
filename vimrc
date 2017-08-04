@@ -91,7 +91,7 @@ vnoremap <BS> <C-u>
 " CtrlP to open buffers and files
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>fh :CtrlP ~<CR>
-nnoremap <Leader>ft :CtrlP ~/proj<CR>
+nnoremap <Leader>ft :CtrlP ~/p<CR>
 nnoremap <Leader>fe :CtrlP /etc<CR>
 nnoremap <Leader>fl :CtrlP /var/log<CR>
 nnoremap <Leader>fd :CtrlP
@@ -282,7 +282,7 @@ if executable('ag')
 elseif executable('pss')
     set grepprg=pss\ --nocolor
     let g:ctrlp_user_command = 'pss --ignore-dir="eggs,site-packages,_tmp,.cache" -f %s'
- endif
+endif
 
 let g:gitgutter_sign_modified = '≠'
 let g:gitgutter_sign_modified_removed = '±'
