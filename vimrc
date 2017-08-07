@@ -336,7 +336,7 @@ command! -bar RangerChooser call RangeChooser()
 nnoremap <leader>fo :<C-U>RangerChooser<CR>
 
 " Create a scratch buffer
-nnoremap <Leader>fh  :vnew<cr>:setlocal buftype=nofile bufhidden=wipe nobuflisted<cr>
+nnoremap <Leader>fs  :vnew<cr>:setlocal buftype=nofile bufhidden=wipe nobuflisted<cr>
 :command! -nargs=1 KeepScratch setlocal buftype= | file <args> | w
 
 if executable('ag')
@@ -358,3 +358,6 @@ let g:elm_setup_keybindings = 0
 
 autocmd bufwritepost *.js silent !standard --fix %
 set autoread
+
+" vim-qt workaround
+set guifont=Droid\ Sans\ Mono\ Slashed\ 11

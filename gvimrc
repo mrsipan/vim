@@ -9,19 +9,16 @@ set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 set guicursor+=a:blinkon0
 
 if has("gui_gtk2")
-    "set guifont=Monospace\ 13
-    set guifont=Inconsolata\ 13
+    set guifont=Droid\ Sans\ Mono\ Slashed\ 12
 elseif has("gui_kde")
-    set guifont=Monospace/11/-1/5/50/0/0/0/1/0
+    set guifont=Droid\ Sans\ Mono\ Slashed\ 12
 elseif has("gui_win32")
     set guifont=Lucida_Console:h10
 elseif has("gui_mac") || has("gui_macvim")
-    " set guifont=Menlo:h15
     set guifont=Droid\ Sans\ Mono\ Slashed:h13
     set antialias
-else
-    set guifont=-*-lucidatypewriter-medium-r-*-*-12-*-75-*
 endif
+
 set guioptions-=T
 set lines=40
 
