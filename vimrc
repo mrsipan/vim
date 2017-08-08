@@ -56,8 +56,9 @@ let is_kornshell = 1
 let mapleader = "\<Space>"
 " Mapping for spell checker
 nmap <Leader>cs :up<CR>:!ispell -x %<CR>:e!<CR>
+
 " Mapping to switch off search highlighting
-nmap <silent> <Leader>h :nohlsearch<CR>
+nnoremap <silent> <CR> :nohlsearch<CR><CR>
 
 " Switch between windows
 nmap <C-j> <C-w>j<C-w>_
