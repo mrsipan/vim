@@ -150,14 +150,10 @@ if has("autocmd")
         \ if line("'\"") > 0 && line("'\"") <= line("$") |
         \   execute "normal g`\"" |
         \ endif
+
     " Remove trailing whitespaces on save
-    autocmd BufWritePre *.py :%s/\s\+$//e
-    autocmd BufWritePre *.clj :%s/\s\+$//e
-    autocmd BufWritePre *.js :%s/\s\+$//e
-    autocmd BufWritePre *.sh :%s/\s\+$//e
-    autocmd BufWritePre *.rb :%s/\s\+$//e
-    autocmd BufWritePre *.scala :%s/\s\+$//e
-    autocmd BufWritePre *.groovy :%s/\s\+$//e
+    autocmd BufWritePre *.py,*.clj,*.cljs,*.js,*.sh,*.rb,*.scala,*.groovy :%s/\s\+$//e
+
 
 endif
 
