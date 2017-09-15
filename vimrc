@@ -99,7 +99,6 @@ nnoremap <Leader>fd :CtrlP
 
 nmap <A-r> :CtrlPClearCache<CR>
 
-
 let g:ctrlp_map = '<Leader>ff'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
@@ -153,7 +152,6 @@ if has("autocmd")
 
     " Remove trailing whitespaces on save
     autocmd BufWritePre *.py,*.clj,*.cljs,*.js,*.sh,*.rb,*.scala,*.groovy :%s/\s\+$//e
-
 
 endif
 
@@ -217,26 +215,26 @@ set pastetoggle=<F2>
 cmap w!! w !sudo tee % >/dev/null
 
 " syntastic for python
-" let g:syntastic_python_checkers = ['flake8']
-" let g:syntastic_python_checker_args = '--ignore=E501,E225'
-" let g:syntastic_python_flake8_exec = '~/opt/bin/flake8'
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checker_args = '--ignore=E501,E225'
+let g:syntastic_python_flake8_exec = '~/opt/bin/flake8'
 
-" " syntastic for ruby
-" let g:syntastic_ruby_checkers = ['rubocop']
-" let g:syntastic_ruby_rubocop_exec = '/opt/chefdk/bin/rubocop'
+" syntastic for ruby
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_ruby_rubocop_exec = '/opt/chefdk/bin/rubocop'
 
-" let g:syntastic_mode_map = { 'mode': 'passive',
-"             \ 'active_filetypes': [],
-"             \ 'passive_filetypes': [] }
+let g:syntastic_mode_map = { 'mode': 'passive',
+            \ 'active_filetypes': [],
+            \ 'passive_filetypes': [] }
 
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_error_symbol = '➔'
-" let g:syntastic_warning_symbol = '➔'
-" let g:syntastic_style_error_symbol = '◆'
-" let g:syntastic_style_warning_symbol = '◆'
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_error_symbol = '➔'
+let g:syntastic_warning_symbol = '➔'
+let g:syntastic_style_error_symbol = '◆'
+let g:syntastic_style_warning_symbol = '◆'
 
-" nnoremap <Leader>cp :SyntasticCheck<CR>
-" nnoremap <Leader>cP :SyntasticReset<CR>
+nnoremap <Leader>cp :SyntasticCheck<CR>
+nnoremap <Leader>cP :SyntasticReset<CR>
 
 " completion in ex mode
 if exists("&wildignorecase")
