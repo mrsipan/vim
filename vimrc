@@ -52,13 +52,14 @@ let c_syntax_for_h = 1
 " OpenBSD has sh -> ksh and Linux has sh -> bash
 let is_kornshell = 1
 
-" leader ',' and localleader '\'
 let mapleader = "\<Space>"
+let maplocalleader = "9"
+
 " Mapping for spell checker
 nmap <Leader>cs :up<CR>:!ispell -x %<CR>:e!<CR>
 
 " Mapping to switch off search highlighting
-nnoremap <silent> <CR> :nohlsearch<CR><CR>
+nnoremap <silent> <Leader>/ :nohlsearch<CR>/<BS>
 
 " Switch between windows
 nmap <C-j> <C-w>j<C-w>_
