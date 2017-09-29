@@ -43,6 +43,7 @@ giturls=(
   git://github.com/vim-scripts/Auto-Pairs.git
   git://github.com/vim-scripts/YankRing.vim.git
   git://github.com/vim-syntastic/syntastic.git
+  git://github.com/jceb/vim-orgmode.git
 )
 
 update_git() {
