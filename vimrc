@@ -331,10 +331,6 @@ endfunction
 command! -bar RangerChooser call RangeChooser()
 nnoremap <leader>fo :<C-U>RangerChooser<CR>
 
-" Create a scratch buffer
-nnoremap <Leader>fs  :vnew<cr>:setlocal buftype=nofile bufhidden=wipe nobuflisted<cr>
-:command! -nargs=1 KeepScratch setlocal buftype= | file <args> | w
-
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 elseif executable('pss')
