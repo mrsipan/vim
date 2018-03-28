@@ -8,14 +8,15 @@ giturls=(
   git://github.com/Lokaltog/vim-easymotion.git
   git://github.com/SirVer/ultisnips.git
   git://github.com/airblade/vim-gitgutter.git
+  git://github.com/cespare/vim-toml.git
   git://github.com/ctrlpvim/ctrlp.vim.git
   git://github.com/derekwyatt/vim-scala.git
   git://github.com/fatih/vim-go.git
   git://github.com/fsharp/vim-fsharp.git
   git://github.com/guns/vim-clojure-highlight.git
-  git://github.com/guns/vim-clojure-static
   git://github.com/guns/vim-sexp.git
   git://github.com/jamessan/vim-gnupg.git
+  git://github.com/jceb/vim-orgmode.git
   git://github.com/kien/rainbow_parentheses.vim.git
   git://github.com/mileszs/ack.vim.git
   git://github.com/mrsipan/ctrlp-py-matcher.git
@@ -43,7 +44,6 @@ giturls=(
   git://github.com/vim-scripts/Auto-Pairs.git
   git://github.com/vim-scripts/YankRing.vim.git
   git://github.com/vim-syntastic/syntastic.git
-  git://github.com/jceb/vim-orgmode.git
 )
 
 update_git() {
@@ -59,7 +59,7 @@ update_git() {
     }
     ls -1 [Mm]akefile > /dev/null 2>&1 && {
       make clean || true
-      make
+      make install || true
     }
     cd $here
     return 0

@@ -142,7 +142,7 @@ if has("autocmd")
     " Python doctest indent.
     autocmd FileType rst,cfg setlocal sw=4 sts=4 et tw=72
     " Yaml
-    autocmd FileType yml,yaml setlocal sw=2 sts=2 et
+    autocmd FileType yml,yaml,json setlocal tabstop=2 sw=2 sts=2 et
     " Shell scripts
     autocmd FileType cpp,sh,spec,clj,lua,pp,rs setl tabstop=2 sw=2 et
     " When editing a file, always jump to the last known cursor position.
@@ -222,7 +222,7 @@ let g:syntastic_python_flake8_exec = '~/opt/bin/flake8'
 
 " syntastic for ruby
 let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_ruby_rubocop_exec = '/opt/chefdk/bin/rubocop'
+let g:syntastic_ruby_rubocop_exec = '/opt/chefdk/embedded/bin/rubocop'
 
 let g:syntastic_mode_map = { 'mode': 'passive',
             \ 'active_filetypes': [],
@@ -290,7 +290,7 @@ nnoremap <Leader>q @q
 
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "mrsipan_ultisnips"]
 
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
