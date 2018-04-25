@@ -100,6 +100,11 @@ nnoremap <Leader>fd :CtrlP
 
 nmap <A-r> :CtrlPClearCache<CR>
 
+nnoremap <Leader>lp :lprevious<CR>
+nnoremap <Leader>ln :lnext<CR>
+nnoremap <Leader>lP :lfirst<CR>
+nnoremap <Leader>lN :llast<CR>
+
 let g:ctrlp_map = '<Leader>ff'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
