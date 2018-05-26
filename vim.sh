@@ -15,6 +15,7 @@ giturls=(
   git://github.com/fsharp/vim-fsharp.git
   git://github.com/guns/vim-clojure-highlight.git
   git://github.com/guns/vim-sexp.git
+  git://github.com/hashivim/vim-terraform.git
   git://github.com/jamessan/vim-gnupg.git
   git://github.com/jceb/vim-orgmode.git
   git://github.com/kien/rainbow_parentheses.vim.git
