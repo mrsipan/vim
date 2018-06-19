@@ -59,6 +59,10 @@ update_git() {
       ./configure
     }
     ls -1 [Mm]akefile > /dev/null 2>&1 && {
+      if [ $pkgname = 'vim-go' ]; then
+        printf "%s\n" "Do not run vim-go tests"
+        return
+      fi
       make clean || true
       make install || true
     }
