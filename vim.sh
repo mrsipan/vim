@@ -61,6 +61,7 @@ update_git() {
     ls -1 [Mm]akefile > /dev/null 2>&1 && {
       if [ $pkgname = 'vim-go' ]; then
         printf "%s\n" "Do not run vim-go tests"
+        cd $here
         return
       fi
       make clean || true
