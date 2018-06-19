@@ -53,7 +53,7 @@ update_git() {
 
   if [ -d $pkgname ]; then
     cd $pkgname
-    git pull
+    git pull origin master
     ls -1 [Mm]akefile.in > /dev/null 2>&1 && {
       autoconf
       ./configure
