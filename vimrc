@@ -158,7 +158,7 @@ if has("autocmd")
         \ endif
 
     " Remove trailing whitespaces on save
-    autocmd BufWritePre *.py,*.clj,*.cljs,*.js,*.sh,*.rb,*.scala,*.groovy :%s/\s\+$//e
+    autocmd BufWritePre *.py,*.clj,*.cljs,*.js,*.sh,*.rb,*.scala,*.groovy,Dockerfile :%s/\s\+$//e
 
 endif
 
@@ -296,7 +296,7 @@ nnoremap <Leader>q @q
 
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "mrsipan_ultisnips"]
 
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
