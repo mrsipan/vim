@@ -3,6 +3,7 @@
 declare -a giturls
 
 giturls=(
+  git://github.com/AndrewRadev/linediff.vim.git
   git://github.com/AndrewRadev/splitjoin.vim.git
   git://github.com/ElmCast/elm-vim.git
   git://github.com/Lokaltog/vim-easymotion.git

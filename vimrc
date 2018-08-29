@@ -67,7 +67,7 @@ nmap <C-k> <C-w>k<C-w>_
 nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
 
-nmap <Leader>w :w<CR>
+nmap <Leader>fs :w<CR>
 " nmap <silent> <Leader>e :Ex<CR>
 "nmap <silent> <C-p> :bp<CR>
 "nmap <silent> <C-n> :bn<CR>
@@ -359,3 +359,5 @@ set autoread
 
 " vim-qt workaround
 set guifont=Droid\ Sans\ Mono\ Slashed\ 11
+
+let g:terraform_fmt_on_save = 1
