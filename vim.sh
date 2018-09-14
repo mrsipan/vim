@@ -5,6 +5,7 @@ declare -a giturls
 giturls=(
   git://github.com/AndrewRadev/linediff.vim.git
   git://github.com/AndrewRadev/splitjoin.vim.git
+  git://github.com/ConradIrwin/vim-bracketed-paste
   git://github.com/ElmCast/elm-vim.git
   git://github.com/Lokaltog/vim-easymotion.git
   git://github.com/SirVer/ultisnips.git
