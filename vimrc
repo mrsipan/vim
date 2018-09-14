@@ -72,7 +72,7 @@ nmap <Leader>fs :w<CR>
 "nmap <silent> <C-p> :bp<CR>
 "nmap <silent> <C-n> :bn<CR>
 " nmap <silent> <Leader>q :bdel<CR>
-nmap <silent> <Leader>e :Vexplore!<CR>
+nmap <silent> <Leader>fe :Vexplore!<CR>
 " nmap <silent> <Leader>m :bmod<CR>
 
 " don't use Ex mode, use Q for formatting, allows to use ZQ to quit
@@ -217,6 +217,7 @@ let g:rbpt_max = 16
 
 " toggle paste
 set pastetoggle=<F2>
+:nnoremap <Leader>op :set invpaste<CR>
 
 " sudo
 cmap w!! w !sudo tee % >/dev/null
