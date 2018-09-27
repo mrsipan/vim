@@ -72,7 +72,7 @@ nmap <Leader>fs :w<CR>
 "nmap <silent> <C-p> :bp<CR>
 "nmap <silent> <C-n> :bn<CR>
 " nmap <silent> <Leader>q :bdel<CR>
-nmap <silent> <Leader>fe :Vexplore!<CR>
+nmap <silent> <Leader>fv :Vexplore!<CR>
 " nmap <silent> <Leader>m :bmod<CR>
 
 " don't use Ex mode, use Q for formatting, allows to use ZQ to quit
@@ -94,8 +94,6 @@ vnoremap <BS> <C-u>
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>fh :CtrlP ~<CR>
 nnoremap <Leader>ft :CtrlP ~/p<CR>
-nnoremap <Leader>fe :CtrlP /etc<CR>
-nnoremap <Leader>fl :CtrlP /var/log<CR>
 nnoremap <Leader>fd :CtrlP
 
 nmap <A-r> :CtrlPClearCache<CR>
@@ -336,7 +334,7 @@ function! RangeChooser()
 endfunction
 
 command! -bar RangerChooser call RangeChooser()
-nnoremap <leader>fo :<C-U>RangerChooser<CR>
+nnoremap <leader>fx :<C-U>RangerChooser<CR>
 
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
@@ -362,3 +360,17 @@ set autoread
 set guifont=Droid\ Sans\ Mono\ Slashed\ 11
 
 let g:terraform_fmt_on_save = 1
+
+nnoremap <silent> <Leader>cp :cprev<CR>
+nnoremap <silent> <Leader>cn :cnext<CR>
+nnoremap <silent> <Leader>cn :cnext<CR>
+nnoremap <silent> <Leader>cP :cfirst<CR>
+nnoremap <silent> <Leader>cc :cclose<CR>
+nnoremap <silent> <Leader>co :copen<CR>
+
+nnoremap <silent> <Leader>lp :lprev<CR>
+nnoremap <silent> <Leader>ln :lnext<CR>
+nnoremap <silent> <Leader>lP :lfirst<CR>
+nnoremap <silent> <Leader>lN :llast<CR>
+nnoremap <silent> <Leader>cc :lclose<CR>
+nnoremap <silent> <Leader>co :lopen<CR>
