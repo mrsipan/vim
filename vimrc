@@ -372,5 +372,5 @@ nnoremap <silent> <Leader>lp :lprev<CR>
 nnoremap <silent> <Leader>ln :lnext<CR>
 nnoremap <silent> <Leader>lP :lfirst<CR>
 nnoremap <silent> <Leader>lN :llast<CR>
-nnoremap <silent> <Leader>cc :lclose<CR>
-nnoremap <silent> <Leader>co :lopen<CR>
+nnoremap <silent> <Leader>lc :lclose<CR>
+nnoremap <silent> <Leader>lo :lopen<CR>
