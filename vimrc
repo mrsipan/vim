@@ -67,7 +67,7 @@ nmap <C-k> <C-w>k<C-w>_
 nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
 
-nmap <Leader>fs :w<CR>
+nmap <Leader>fw :w<CR>
 " nmap <silent> <Leader>e :Ex<CR>
 "nmap <silent> <C-p> :bp<CR>
 "nmap <silent> <C-n> :bn<CR>
@@ -289,7 +289,7 @@ let g:gitgutter_sign_modified = '≠'
 let g:gitgutter_sign_modified_removed = '±'
 
 let g:gitgutter_enabled = 0
-nmap <leader>gg :GitGutterToggle<CR>
+nmap <leader>GG :GitGutterToggle<CR>
 
 nnoremap <Leader>q @q
 
@@ -372,5 +372,5 @@ nnoremap <silent> <Leader>lp :lprev<CR>
 nnoremap <silent> <Leader>ln :lnext<CR>
 nnoremap <silent> <Leader>lP :lfirst<CR>
 nnoremap <silent> <Leader>lN :llast<CR>
-nnoremap <silent> <Leader>cc :lclose<CR>
-nnoremap <silent> <Leader>co :lopen<CR>
+nnoremap <silent> <Leader>lc :lclose<CR>
+nnoremap <silent> <Leader>lo :lopen<CR>

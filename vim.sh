@@ -7,7 +7,6 @@ giturls=(
   git://github.com/AndrewRadev/splitjoin.vim.git
   git://github.com/ConradIrwin/vim-bracketed-paste
   git://github.com/ElmCast/elm-vim.git
-  git://github.com/Lokaltog/vim-easymotion.git
   git://github.com/SirVer/ultisnips.git
   git://github.com/airblade/vim-gitgutter.git
   git://github.com/cespare/vim-toml.git
@@ -119,7 +118,7 @@ mkdir -p bundle autoload tmp
 
 # download pathogen
 wget --no-check-certificate \
-  https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim \
+  https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim \
   -P autoload
 
 cd bundle
