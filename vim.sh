@@ -38,7 +38,6 @@ giturls=(
   git://github.com/tpope/vim-fireplace.git
   git://github.com/tpope/vim-fugitive.git
   git://github.com/tpope/vim-repeat.git
-  git://github.com/tpope/vim-sexp-mappings-for-regular-people.git
   git://github.com/tpope/vim-surround.git
   git://github.com/tpope/vim-unimpaired.git
   git://github.com/tpope/vim-vinegar.git
