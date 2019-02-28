@@ -195,8 +195,8 @@ autocmd Syntax clojure RainbowParenthesesLoadRound
 autocmd Syntax clojure RainbowParenthesesLoadSquare
 autocmd Syntax clojure RainbowParenthesesLoadBraces
 autocmd Syntax clojure RainbowParenthesesLoadChevrons
-autocmd BufEnter *.clj RainbowParenthesesToggle
-autocmd BufLeave *.clj RainbowParenthesesToggle
+autocmd BufEnter *.clj,*.cljs RainbowParenthesesToggle
+autocmd BufLeave *.clj,*.cljs RainbowParenthesesToggle
 
 let g:rbpt_colorpairs = [
      \ ['102', '#8c8c8c'],

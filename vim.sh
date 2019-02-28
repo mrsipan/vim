@@ -27,8 +27,6 @@ giturls=(
   git://github.com/mrsipan/vim-simple8-theme.git
   git://github.com/mrsipan/vim-sipan-theme.git
   git://github.com/pangloss/vim-javascript.git
-  git://github.com/rodjek/vim-puppet.git
-  git://github.com/tkztmk/vim-vala.git
   git://github.com/tmhedberg/matchit.git
   git://github.com/tommcdo/vim-exchange.git
   git://github.com/tpope/vim-classpath.git
