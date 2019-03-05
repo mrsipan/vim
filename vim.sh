@@ -37,10 +37,8 @@ giturls=(
   git://github.com/tpope/vim-fugitive.git
   git://github.com/tpope/vim-repeat.git
   git://github.com/tpope/vim-surround.git
-  git://github.com/tpope/vim-unimpaired.git
   git://github.com/tpope/vim-vinegar.git
   git://github.com/vim-ruby/vim-ruby.git
-  git://github.com/vim-scripts/Auto-Pairs.git
   git://github.com/vim-scripts/YankRing.vim.git
   git://github.com/vim-syntastic/syntastic.git
 )
