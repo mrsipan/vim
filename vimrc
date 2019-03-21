@@ -374,3 +374,10 @@ nnoremap <silent> <Leader>lP :lfirst<CR>
 nnoremap <silent> <Leader>lN :llast<CR>
 nnoremap <silent> <Leader>lc :lclose<CR>
 nnoremap <silent> <Leader>lo :lopen<CR>
+
+let g:sexp_mappings = {
+    \ 'sexp_emit_head_element': '<LocalLeader>w',
+    \ 'sexp_emit_tail_element': '<LocalLeader>e',
+    \ 'sexp_capture_prev_element': '<LocalLeader>a',
+    \ 'sexp_capture_next_element': '<LocalLeader>f',
+    \ }
