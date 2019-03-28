@@ -21,6 +21,7 @@ giturls=(
   git://github.com/jceb/vim-orgmode.git
   git://github.com/jiangmiao/auto-pairs.git
   git://github.com/kien/rainbow_parentheses.vim.git
+  git://github.com/michaeljsmith/vim-indent-object.git
   git://github.com/mileszs/ack.vim.git
   git://github.com/mrsipan/ctrlp-py-matcher.git
   git://github.com/mrsipan/vim-python.git
