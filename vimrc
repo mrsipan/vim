@@ -381,3 +381,6 @@ let g:sexp_mappings = {
     \ 'sexp_capture_prev_element': '<LocalLeader>a',
     \ 'sexp_capture_next_element': '<LocalLeader>f',
     \ }
+
+nnoremap "" "+
+
