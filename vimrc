@@ -382,5 +382,5 @@ let g:sexp_mappings = {
     \ 'sexp_capture_next_element': '<LocalLeader>f',
     \ }
 
-nnoremap "" "+
+nnoremap "' "+
 
