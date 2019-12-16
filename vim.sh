@@ -11,6 +11,7 @@ giturls=(
   git://github.com/airblade/vim-gitgutter.git
   git://github.com/cespare/vim-toml.git
   git://github.com/ctrlpvim/ctrlp.vim.git
+  git://github.com/daveyarwood/vim-alda.git
   git://github.com/derekwyatt/vim-scala.git
   git://github.com/fatih/vim-go.git
   git://github.com/fsharp/vim-fsharp.git
@@ -42,7 +43,9 @@ giturls=(
   git://github.com/tpope/vim-vinegar.git
   git://github.com/vim-ruby/vim-ruby.git
   git://github.com/vim-scripts/YankRing.vim.git
+  git://github.com/vim-scripts/confluencewiki.vim.git
   git://github.com/vim-syntastic/syntastic.git
+  git://github.com/wlangstroth/vim-racket.git
 )
 
 update_git() {

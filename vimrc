@@ -83,7 +83,7 @@ nmap Q :q<CR>
 
 " Make <Space> in normal mode go down half a page rather than
 " left a character
-nnoremap <Tab> <C-d>
+nnoremap <Enter> <C-d>
 nnoremap <BS> <C-u>
 " ultisnips is overriden this:
 vnoremap <Tab> <C-d>
@@ -215,7 +215,6 @@ let g:rbpt_max = 16
 
 " toggle paste
 set pastetoggle=<F2>
-:nnoremap <Leader>op :set invpaste<CR>
 
 " sudo
 cmap w!! w !sudo tee % >/dev/null
@@ -382,5 +381,11 @@ let g:sexp_mappings = {
     \ 'sexp_capture_next_element': '<LocalLeader>f',
     \ }
 
-nnoremap "' "+
+nnoremap <Leader>oy "+y
+vnoremap <Leader>oy "+y
+
+autocmd BufRead,BufNewFile *.confluencewiki set filetype=confluencewiki
+
+set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
+nnoremap <silent> <Leader>gi :set invlist<CR>
 
