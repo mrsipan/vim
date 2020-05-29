@@ -7,10 +7,12 @@ giturls=(
   git://github.com/AndrewRadev/splitjoin.vim.git
   git://github.com/ConradIrwin/vim-bracketed-paste
   git://github.com/ElmCast/elm-vim.git
+  git://github.com/JuliaEditorSupport/julia-vim.git
   git://github.com/SirVer/ultisnips.git
   git://github.com/airblade/vim-gitgutter.git
   git://github.com/cespare/vim-toml.git
   git://github.com/ctrlpvim/ctrlp.vim.git
+  git://github.com/dag/vim-fish.git
   git://github.com/daveyarwood/vim-alda.git
   git://github.com/derekwyatt/vim-scala.git
   git://github.com/fatih/vim-go.git
@@ -21,6 +23,7 @@ giturls=(
   git://github.com/jamessan/vim-gnupg.git
   git://github.com/jceb/vim-orgmode.git
   git://github.com/jiangmiao/auto-pairs.git
+  git://github.com/jupyter-vim/jupyter-vim.git
   git://github.com/kien/rainbow_parentheses.vim.git
   git://github.com/michaeljsmith/vim-indent-object.git
   git://github.com/mileszs/ack.vim.git

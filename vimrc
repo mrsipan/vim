@@ -32,6 +32,10 @@ set directory^=~/.vim/tmp//
 set backupdir^=~/.vim/tmp//
 set autoread
 
+if &shell =~# 'fish$'
+    set shell=sh
+endif
+
 " Use syntax highlighting when terminal allows it
 if &t_Co > 2 || has("gui_running")
     syntax on
@@ -85,6 +89,7 @@ nmap Q :q<CR>
 " left a character
 nnoremap <Enter> <C-d>
 nnoremap <BS> <C-u>
+nnoremap <C-h> <C-u>
 " ultisnips is overriden this:
 vnoremap <Tab> <C-d>
 autocmd VimEnter * vmap <Tab> <C-d>
@@ -254,7 +259,7 @@ endif
 let g:yankring_history_dir = '$HOME/.vim/tmp'
 
 " Reload file
-nmap gR :e!<CR>
+nnoremap <silence> gR :e!<CR>
 
 " " paste and go to end
 " vnoremap <silent> y y`]
