@@ -142,7 +142,7 @@ if has("autocmd")
     " Get rid of the annoying reverse for HTML italic.
     autocmd FileType html,xhtml hi htmlItalic term=underline cterm=underline
     " Java, JavaScript, Perl, Python and Tcl indent.
-    autocmd FileType java,javascript,perl,python,tcl,vim,groovy setl sw=4 sts=4 et
+    autocmd FileType java,javascript,perl,python,tcl,vim,groovy,julia,fish setl sw=4 sts=4 et
     autocmd FileType go setlocal tabstop=3
     " Ada indent.
     autocmd FileType ada setlocal sw=3 sts=3 et
