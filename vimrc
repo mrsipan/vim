@@ -31,6 +31,8 @@ set hidden
 set directory^=~/.vim/tmp//
 set backupdir^=~/.vim/tmp//
 set autoread
+set undodir=~/.vim/tmp//
+set undofile
 
 if &shell =~# 'fish$'
     set shell=sh
