@@ -9,7 +9,7 @@ set background=dark
 set backspace=indent,eol,start
 set cinoptions=:0,l1,g0,t0,+.5s,(.5s,u0,U1,j1
 set encoding=utf-8
-set history=50
+set history=999
 set incsearch
 set listchars=tab:>-,trail:-
 set modelines=5
@@ -29,12 +29,13 @@ set splitbelow
 set hidden
 " swap and backup files in one place
 set directory^=~/.vim/tmp//
+set backup
 set backupdir^=~/.vim/tmp//
 set autoread
 set undodir=~/.vim/tmp//
 set undofile
 
-if &shell =~# 'fish$'
+if &shell =~# 'xonsh$'
     set shell=sh
 endif
 
@@ -156,7 +157,7 @@ if has("autocmd")
     " Yaml
     autocmd FileType yml,yaml,json setlocal tabstop=2 sw=2 sts=2 et
     " Shell scripts
-    autocmd FileType cpp,sh,spec,clj,lua,pp,rs setl tabstop=2 sw=2 et
+    autocmd FileType cpp,sh,spec,clj,lua,pp,rs,Dockerfile setl tabstop=2 sw=2 et
     " When editing a file, always jump to the last known cursor position.
     autocmd BufReadPost *
         \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -230,7 +231,7 @@ cmap w!! w !sudo tee % >/dev/null
 " syntastic for python
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_checker_args = '--ignore=E501,E225'
-let g:syntastic_python_flake8_exec = '~/opt/bin/flake8'
+" let g:syntastic_python_flake8_exec = '~/opt/bin/flake8'
 
 " syntastic for ruby
 let g:syntastic_ruby_checkers = ['rubocop']
@@ -262,7 +263,7 @@ endif
 let g:yankring_history_dir = '$HOME/.vim/tmp'
 
 " Reload file
-nnoremap <silence> gR :e!<CR>
+nnoremap gR :e! \| :redraw! \| :echom 'File reloaded'<CR>
 
 " " paste and go to end
 " vnoremap <silent> y y`]
@@ -350,11 +351,11 @@ elseif executable('pss')
     let g:ackprg = 'pss --nocolor'
 endif
 
-if executable('opam')
-    let s:merlin = substitute(system('opam config var share'), '\n$', '', '''') . "/merlin"
-    execute "set rtp+=" . s:merlin . "/vim"
-    let g:syntastic_ocaml_checkers = ['merlin']
-endif
+" if executable('opam')
+"     let s:merlin = substitute(system('opam config var share'), '\n$', '', '''') . "/merlin"
+"     execute "set rtp+=" . s:merlin . "/vim"
+"     let g:syntastic_ocaml_checkers = ['merlin']
+" endif
 
 let g:elm_format_autosave = 1
 let g:elm_setup_keybindings = 0
@@ -396,5 +397,11 @@ vnoremap <Leader>oy "+y
 autocmd BufRead,BufNewFile *.confluencewiki set filetype=confluencewiki
 
 set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
-nnoremap <silent> <Leader>gi :set invlist<CR>
+nnoremap <silent> gI :set invlist<CR>
+
+" nnoremap <Leader>St :set filetype=rst<CR>
+" nnoremap <Leader>Sy :set filetype=python<CR>
+" nnoremap <Leader>Sc :set filetype=clojure<CR>
+
+set clipboard+=unnamed
 

@@ -9,6 +9,7 @@ augroup filetypedetect
 " Hence, the treatment of text files has been changed.
 "autocmd! BufNewFile,BufRead *.txt setfiletype text
 autocmd! BufNewFile,BufRead *.txt setfiletype rst
+autocmd! BufNewFile,BufRead .xonshrc setfiletype python
 autocmd! BufNewFile,BufRead *.tmac,*.ref,*.refer,*.pic setfiletype nroff
 autocmd! BufNewFile,BufRead ~/.mutt/* setfiletype muttrc
 autocmd! BufNewFile,BufRead ksh.kshrc,.shrc,sh.shrc call SetFileTypeSH("ksh")
