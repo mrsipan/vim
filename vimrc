@@ -19,7 +19,40 @@ set showcmd
 set showmatch
 set showmode
 set spelllang=en_us
-set statusline=%<\%n:%f\ %m%r%y%=%-10.(%{fugitive#statusline()}\ L:\%l/%L\ C:\%c%V\ %P%)
+
+function! CurrentBranchName()
+
+python3 << EOF
+try:
+    import git
+except ImportError:
+    def branch_name():
+        return 'check-gitpython'
+    sys.exit(0)
+import pathlib
+import vim
+
+def branch_name():
+    cwd = pathlib.Path(vim.current.buffer.name).parent
+    try:
+        repo = git.Repo(cwd.as_posix(), search_parent_directories=True)
+        name = repo.active_branch.name
+        working_tree_dir, = repo.working_tree_dir.split('/')[-1:]
+        return '{}/{}'.format(
+            working_tree_dir,
+            name[20:] if len(name) > 20 else name
+            )
+    except git.exc.InvalidGitRepositoryError:
+        return 'no-git'
+    except Exception:
+        return 'git-error'
+EOF
+
+    return py3eval('branch_name()')
+
+endfunction
+
+set statusline=%<\%n:%F\ %m%r%y%=%-10.(%{CurrentBranchName()}\ L:\%l/%L\ C:\%c%V\ %P%)
 set laststatus=2
 " set tabpagemax=20
 " split a window rightward and downward
@@ -101,6 +134,8 @@ vnoremap <BS> <C-u>
 " CtrlP to open buffers and files
 nnoremap <Leader>bb :CtrlPBuffer<CR>
 nnoremap <Leader>bF :PrettyFormat<CR>
+nnoremap <Leader>bD :bdel<CR>
+nnoremap <Leader>bS :NewScratch<CR>
 nnoremap <Leader>fh :CtrlP ~<CR>
 nnoremap <Leader>ft :CtrlP ~/p<CR>
 nnoremap <Leader>fd :CtrlP
@@ -147,6 +182,7 @@ if has("autocmd")
     autocmd FileType html,xhtml hi htmlItalic term=underline cterm=underline
     " Java, JavaScript, Perl, Python and Tcl indent.
     autocmd FileType java,javascript,perl,python,tcl,vim,groovy,julia,fish setl sw=4 sts=4 et
+    autocmd FileType python let b:dispatch = 'pytest %'
     autocmd FileType go setlocal tabstop=3
     " Ada indent.
     autocmd FileType ada setlocal sw=3 sts=3 et
@@ -166,6 +202,7 @@ if has("autocmd")
 
     " Remove trailing whitespaces on save
     autocmd BufWritePre *.py,*.clj,*.cljs,*.js,*.sh,*.rb,*.scala,*.groovy,Dockerfile :%s/\s\+$//e
+    autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
 
 endif
 
@@ -247,8 +284,8 @@ let g:syntastic_warning_symbol = '➔'
 let g:syntastic_style_error_symbol = '◆'
 let g:syntastic_style_warning_symbol = '◆'
 
-nnoremap <Leader>cp :SyntasticCheck<CR>
-nnoremap <Leader>cP :SyntasticReset<CR>
+nnoremap <Leader>fk :SyntasticCheck<CR>
+nnoremap <Leader>fK :SyntasticReset<CR>
 
 " completion in ex mode
 if exists("&wildignorecase")
@@ -284,7 +321,7 @@ autocmd BufWinLeave * call clearmatches()
 let g:paredit_mode = 0
 let g:paredit_electric_return = 1
 
-if executable('ag')
+if executable('rg')
     set grepprg=rg\ --no-heading\ --color=never
     let g:ctrlp_user_command = 'rg --no-heading --color=never --files'
     let g:gitgutter_grep_command = 'rg --no-heading --color=never'
@@ -298,7 +335,8 @@ let g:gitgutter_sign_modified = '≠'
 let g:gitgutter_sign_modified_removed = '±'
 
 let g:gitgutter_enabled = 0
-nmap <leader>GG :GitGutterToggle<CR>
+nnoremap gGg :GitGutterToggle<CR>
+nnoremap gGb :Gblame<CR>
 
 nnoremap <Leader>q @q
 
@@ -308,6 +346,7 @@ let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "mrsipan_ultisnips"]
 
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+" let g:ctrlp_reuse_window = 'nofile\|help'
 
 " From ranger's examples dir
 function! RangeChooser()
@@ -372,7 +411,7 @@ let g:terraform_fmt_on_save = 1
 
 nnoremap <silent> <Leader>cp :cprev<CR>
 nnoremap <silent> <Leader>cn :cnext<CR>
-nnoremap <silent> <Leader>cn :cnext<CR>
+nnoremap <silent> <Leader>cN :clast<CR>
 nnoremap <silent> <Leader>cP :cfirst<CR>
 nnoremap <silent> <Leader>cc :cclose<CR>
 nnoremap <silent> <Leader>co :copen<CR>
@@ -391,8 +430,8 @@ let g:sexp_mappings = {
     \ 'sexp_capture_next_element': '<LocalLeader>f',
     \ }
 
-nnoremap <Leader>oy "+y
-vnoremap <Leader>oy "+y
+" nnoremap <Leader>oy "+y
+" vnoremap <Leader>oy "+y
 
 autocmd BufRead,BufNewFile *.confluencewiki set filetype=confluencewiki
 
@@ -404,4 +443,25 @@ nnoremap <silent> gI :set invlist<CR>
 " nnoremap <Leader>Sc :set filetype=clojure<CR>
 
 set clipboard+=unnamed
+
+let g:yankring_map_dot = 0
+
+nnoremap <silent> <Leader>bS :NewScratch<CR>
+nnoremap <silent> <Leader>bv :w !rst2html.py \| lynx -stdin<CR><CR>
+" nnoremap <silent> <Leader>fGb :Start git log -p -M --follow --stat -- %<CR>
+nnoremap <silent> gGl :Start git log -p -M --stat \| diffr --colors refine-added:none:background:0x33,0x99,0x33:bold --colors added:none:background:0x33,0x55,0x33 --colors refine-removed:none:background:0x99,0x33,0x33:bold --colors removed:none:background:0x55,0x33,0x33 \| less -R -+F -C<CR>
+nnoremap <silent> gGd :Start git diff \| diffr --colors refine-added:none:background:0x33,0x99,0x33:bold --colors added:none:background:0x33,0x55,0x33 --colors refine-removed:none:background:0x99,0x33,0x33:bold --colors removed:none:background:0x55,0x33,0x33  --line-numbers \| less -R -+F -C<CR>
+nnoremap <silent> gGb :Start git blame % \| cut -d ' ' -f 2- \| ggrep -E --color=always '[0-9]+)' \| less -R -+F -C<CR>
+
+nnoremap <Leader>dc :cd %:p:h<CR>:pwd<CR>
+nnoremap <Leader>bp :w !editblogger -b mrsipan -i<CR><CR>
+
+" To work with kitty
+if !has('gui_running')
+    " Set the terminal default background and foreground colors, thereby
+    " improving performance by not needing to set these colors on empty cells.
+    hi Normal guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
+    let &t_ti = &t_ti . "\033]10;##dddddd\007\033]11;#303030\007"
+    let &t_te = &t_te . "\033]110\007\033]111\007"
+endif
 

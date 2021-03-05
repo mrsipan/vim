@@ -3,19 +3,21 @@
 declare -a giturls
 
 giturls=(
+  git://github.com/5long/pytest-vim-compiler.git
   git://github.com/AndrewRadev/linediff.vim.git
   git://github.com/AndrewRadev/splitjoin.vim.git
-  git://github.com/ConradIrwin/vim-bracketed-paste
+  # git://github.com/ConradIrwin/vim-bracketed-paste
   git://github.com/JuliaEditorSupport/julia-vim.git
   git://github.com/SirVer/ultisnips.git
   git://github.com/airblade/vim-gitgutter.git
   git://github.com/cespare/vim-toml.git
   git://github.com/ctrlpvim/ctrlp.vim.git
   git://github.com/dag/vim-fish.git
+  git://github.com/jvirtanen/vim-hcl.git
   git://github.com/daveyarwood/vim-alda.git
   git://github.com/derekwyatt/vim-scala.git
   git://github.com/dyng/ctrlsf.vim.git
-  git://github.com/fatih/vim-go.git
+  # git://github.com/fatih/vim-go.git
   git://github.com/fsharp/vim-fsharp.git
   git://github.com/guns/vim-clojure-highlight.git
   git://github.com/guns/vim-sexp.git
@@ -32,16 +34,18 @@ giturls=(
   git://github.com/mrsipan/vim-rst.git
   git://github.com/mrsipan/vim-simple8-theme.git
   git://github.com/mrsipan/vim-sipan-theme.git
+  git://github.com/mrsipan/vim-toolbox.git
   git://github.com/pangloss/vim-javascript.git
   git://github.com/tmhedberg/matchit.git
   git://github.com/tommcdo/vim-exchange.git
   git://github.com/tpope/vim-classpath.git
   git://github.com/tpope/vim-commentary.git
+  git://github.com/tpope/vim-dispatch.git
   git://github.com/tpope/vim-endwise.git
   git://github.com/tpope/vim-eunuch.git
   git://github.com/tpope/vim-fireplace.git
-  git://github.com/tpope/vim-fugitive.git
   git://github.com/tpope/vim-repeat.git
+  git://github.com/tpope/vim-speeddating.git
   git://github.com/tpope/vim-surround.git
   git://github.com/tpope/vim-vinegar.git
   git://github.com/vim-ruby/vim-ruby.git
@@ -57,7 +61,15 @@ update_git() {
 
   if [ -d $pkgname ]; then
     cd $pkgname
-    git pull origin master
+
+    local branch_name=`git branch --list master`
+
+    if [ ! -z "$branch_name" ]; then
+      git pull origin master
+    else
+      git pull origin main
+    fi
+
     ls -1 [Mm]akefile.in > /dev/null 2>&1 && {
       autoconf
       ./configure
