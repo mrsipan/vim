@@ -30,7 +30,7 @@ except ImportError:
 else:
     import pathlib
     import vim
-    
+
     def branch_name():
         cwd = pathlib.Path(vim.current.buffer.name).parent
         try:
@@ -42,9 +42,9 @@ else:
                 name[20:] if len(name) > 20 else name
                 )
         except git.exc.InvalidGitRepositoryError:
-            return 'no-git'
+            return 'invalid-git-error'
         except Exception:
-            return 'git-error'
+            return 'general-git-error'
 EOF
 
     return py3eval('branch_name()')
