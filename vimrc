@@ -27,24 +27,24 @@ try:
 except ImportError:
     def branch_name():
         return 'check-gitpython'
-    sys.exit(0)
-import pathlib
-import vim
-
-def branch_name():
-    cwd = pathlib.Path(vim.current.buffer.name).parent
-    try:
-        repo = git.Repo(cwd.as_posix(), search_parent_directories=True)
-        name = repo.active_branch.name
-        working_tree_dir, = repo.working_tree_dir.split('/')[-1:]
-        return '{}/{}'.format(
-            working_tree_dir,
-            name[20:] if len(name) > 20 else name
-            )
-    except git.exc.InvalidGitRepositoryError:
-        return 'no-git'
-    except Exception:
-        return 'git-error'
+else:
+    import pathlib
+    import vim
+    
+    def branch_name():
+        cwd = pathlib.Path(vim.current.buffer.name).parent
+        try:
+            repo = git.Repo(cwd.as_posix(), search_parent_directories=True)
+            name = repo.active_branch.name
+            working_tree_dir, = repo.working_tree_dir.split('/')[-1:]
+            return '{}/{}'.format(
+                working_tree_dir,
+                name[20:] if len(name) > 20 else name
+                )
+        except git.exc.InvalidGitRepositoryError:
+            return 'no-git'
+        except Exception:
+            return 'git-error'
 EOF
 
     return py3eval('branch_name()')
