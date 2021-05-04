@@ -21,7 +21,6 @@ set showmode
 set spelllang=en_us
 
 function! CurrentBranchName()
-
 python3 << EOF
 try:
     import git
@@ -461,7 +460,48 @@ if !has('gui_running')
     " Set the terminal default background and foreground colors, thereby
     " improving performance by not needing to set these colors on empty cells.
     hi Normal guifg=NONE guibg=NONE ctermfg=NONE ctermbg=NONE
-    let &t_ti = &t_ti . "\033]10;##dddddd\007\033]11;##424642\007"
-    let &t_te = &t_te . "\033]110\007\033]111\007"
+    " let &t_ti = &t_ti . "\033]10;##dddddd\007\033]11;##424642\007"
+    let &t_ti = &t_ti . "\033]10;##dddddd\007\033]11;##303030\007"
+    let &t_te = &t_te . "\033]253\007\033]236\007"
 endif
 
+
+function! Pretty_format()
+py3 << EOF
+import vim
+import os
+import sys
+import pathlib
+sys.path.append(
+    pathlib.Path('~/.vim').expanduser().as_posix()
+    )
+import lib
+
+vim.current.buffer[:] = lib.fmt(
+    vim.current.buffer.options['filetype'],
+    '\n'.join(vim.current.buffer[:])
+    )
+
+EOF
+endfunction
+
+command! PrettyFormat call Pretty_format()
+
+command! -bar TurnOnScratchBuffer setlocal buflisted buftype=nofile bufhidden=hide noswapfile filetype=rst
+command! -bar TurnOffScratchBuffer setlocal buftype= bufhidden= swapfile
+command! -bar NewScratch new | TurnOnScratchBuffer
+
+augroup scratch_buffers
+    autocmd!
+    autocmd StdinReadPre * TurnOnScratchBuffer
+    autocmd VimEnter *
+        \   if @% == '' && &buftype == ''
+        \ |     TurnOnScratchBuffer
+        \ | endif
+    autocmd BufWritePost * ++nested
+        \   if (empty(bufname()) || bufname() == '-stdin-') && &buftype == 'nofile'
+        \ |     TurnOffScratchBuffer
+        \ |     setlocal nomodified
+        \ |     edit <afile>
+        \ | endif
+augroup END

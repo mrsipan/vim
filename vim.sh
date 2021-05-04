@@ -34,7 +34,6 @@ giturls=(
   git://github.com/mrsipan/vim-rst.git
   git://github.com/mrsipan/vim-simple8-theme.git
   git://github.com/mrsipan/vim-sipan-theme.git
-  git://github.com/mrsipan/vim-toolbox.git
   git://github.com/pangloss/vim-javascript.git
   git://github.com/tmhedberg/matchit.git
   git://github.com/tommcdo/vim-exchange.git
