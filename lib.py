@@ -1,9 +1,11 @@
-import pytest
+try:
+    import pytest
+except ImportError:
 
 PYTEST = False
 
 
-def fmt(file_type, buffer_string):
+def fmt(file_type: bytes, buffer_string: str) -> 'bytes or a string?':
     '''Gets the format and the text and tries to make it pretty
     '''
 
@@ -18,16 +20,21 @@ def fmt(file_type, buffer_string):
 
     elif file_type == b'json':
         import json
-        json_object = json.loads(buffer_string)
-        return json.dumps(json_object, indent=2).split('\n')
+        return json.dumps(json.loads(buffer_string), indent=2).split('\n')
 
+    elif file_type in (b'html', b'htm'):
+        # Better to depend on the editor formatter
+        import bs4
+        return bs4.BeautifulSoup(
+            buffer_string,
+            features='lxml',
+            ).prettify().split('\n')
 
 
 # Pytesting
 
 def test_fmt(mocker):
-
-    buffer_string = '''
+    _buffer_string = '''
     <note>
       <to>Tove</to>
       <from>Jani</from>
@@ -35,8 +42,7 @@ def test_fmt(mocker):
       <body>Don't forget me this weekend!</body>
     </note>
     '''
-
-    print(fmt('hola.xml', buffer_string))
+    print(fmt(b'xml', _buffer_string))
 
 
 if __name__ == '__main__':
