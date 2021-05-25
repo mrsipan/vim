@@ -479,7 +479,7 @@ import lib
 
 vim.current.buffer[:] = lib.fmt(
     vim.current.buffer.options['filetype'],
-    '\n'.join(vim.current.buffer[:])
+    vim.current.buffer[:],
     )
 
 EOF
