@@ -445,11 +445,14 @@ set clipboard+=unnamed
 
 let g:yankring_map_dot = 0
 
+" rst edits
 nnoremap <silent> <Leader>bS :NewScratch<CR>
-nnoremap <silent> <Leader>bv :w !rst2html.py \| lynx -stdin<CR><CR>
+nnoremap <silent> <Leader>bV :w !rst2html.py \| lynx -stdin<CR><CR>
+
+" Git
 " nnoremap <silent> <Leader>fGb :Start git log -p -M --follow --stat -- %<CR>
 nnoremap <silent> gGl :Start git log -p -M --stat \| diffr --colors refine-added:none:background:0x33,0x99,0x33:bold --colors added:none:background:0x33,0x55,0x33 --colors refine-removed:none:background:0x99,0x33,0x33:bold --colors removed:none:background:0x55,0x33,0x33 \| less -R -+F -C<CR>
-nnoremap <silent> gGd :Start git diff \| diffr --colors refine-added:none:background:0x33,0x99,0x33:bold --colors added:none:background:0x33,0x55,0x33 --colors refine-removed:none:background:0x99,0x33,0x33:bold --colors removed:none:background:0x55,0x33,0x33  --line-numbers \| less -R -+F -C<CR>
+nnoremap <silent> gGd :Start git diff \| diffr --colors refine-added:none:background:0x34,0x99,0x33:bold --colors added:none:background:0x33,0x55,0x33 --colors refine-removed:none:background:0x99,0x33,0x33:bold --colors removed:none:background:0x55,0x33,0x33  --line-numbers \| less -R -+F -C<CR>
 nnoremap <silent> gGb :Start git blame % \| cut -d ' ' -f 2- \| ggrep -E --color=always '[0-9]+)' \| less -R -+F -C<CR>
 
 nnoremap <Leader>dc :cd %:p:h<CR>:pwd<CR>
@@ -469,6 +472,7 @@ endif
 function! Pretty_format()
 py3 << EOF
 import vim
+import time
 import os
 import sys
 import pathlib
@@ -477,10 +481,15 @@ sys.path.append(
     )
 import lib
 
-vim.current.buffer[:] = lib.fmt(
+buff = lib.fmt(
     vim.current.buffer.options['filetype'],
     vim.current.buffer[:],
     )
+
+for idx in range(1, len(buff) + 1):
+    vim.current.buffer[0:idx] = buff[0:idx]
+    vim.command('redraw!')
+    time.sleep(.02)
 
 EOF
 endfunction
@@ -505,3 +514,5 @@ augroup scratch_buffers
         \ |     edit <afile>
         \ | endif
 augroup END
+
+set nofoldenable
