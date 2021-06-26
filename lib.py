@@ -1,5 +1,3 @@
-PYTEST = False
-
 def fmt_decorator(fn):
     def decorator(*a):
         try:
@@ -9,7 +7,8 @@ def fmt_decorator(fn):
             return a[1]
         else:
             print('Formatted')
-            return rv
+            # Add an newline on every formatting
+            return [*rv, '\n']
     return decorator
 
 @fmt_decorator
@@ -23,12 +22,13 @@ def fmt(file_type: bytes, buff: list):
         tree = lxml.etree.parse(
             io.BytesIO(buff.encode('utf-8')), parser
             )
-        return lxml.etree.tostring(tree, pretty_print=True).split(b'\n')
+        return lxml.etree.tostring(
+            tree, pretty_print=True).strip().split(b'\n')
 
     elif file_type == b'json':
         import json
         json_object = json.loads(buff)
-        return json.dumps(json_object, indent=2).split('\n')
+        return json.dumps(json_object, indent=2).strip().split('\n')
 
     elif file_type == b'sql':
         import sqlparse
@@ -39,7 +39,7 @@ def fmt(file_type: bytes, buff: list):
             reindent=True,
             indent_width=2,
             use_space_around_operators=True,
-            ).split('\n')
+            ).strip().split('\n')
     else:
         raise ValueError()
 
@@ -60,6 +60,9 @@ def test_fmt(mocker):
 
 
 if __name__ == '__main__':
+
+    global PYTEST
+    PYTEST = False
 
     import pytest
     pytest.main(['-s', __file__])

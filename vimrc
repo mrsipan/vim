@@ -481,15 +481,15 @@ sys.path.append(
     )
 import lib
 
-buff = lib.fmt(
+vim.current.buffer[:] = lib.fmt(
     vim.current.buffer.options['filetype'],
     vim.current.buffer[:],
     )
 
-for idx in range(1, len(buff) + 1):
-    vim.current.buffer[0:idx] = buff[0:idx]
-    vim.command('redraw!')
-    time.sleep(.02)
+    # for idx in range(1, len(buff) + 1):
+    #     vim.current.buffer[0:idx] = buff[0:idx]
+    #     vim.command('redraw!')
+    #     time.sleep(.02)
 
 EOF
 endfunction
