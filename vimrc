@@ -496,6 +496,30 @@ endfunction
 
 command! PrettyFormat call Pretty_format()
 
+function! Insert_today()
+py3 << EOF
+import datetime
+import pathlib
+import sys
+import vim
+sys.path.append(
+    pathlib.Path('~/.vim').expanduser().as_posix()
+    )
+
+win = vim.current.window
+row_n, col_n = win.cursor
+today = datetime.datetime.now().strftime('%A %B %d')
+
+vim.current.buffer[row_n - 1:row_n - 1] = [today, '~'*len(today), '']
+win.cursor = (win.cursor[0], 0)
+vim.command('startinsert')
+
+EOF
+endfunction
+
+command! InsertToday call Insert_today()
+nnoremap <Leader>it :InsertToday<CR>
+
 command! -bar TurnOnScratchBuffer setlocal buflisted buftype=nofile bufhidden=hide noswapfile filetype=rst
 command! -bar TurnOffScratchBuffer setlocal buftype= bufhidden= swapfile
 command! -bar NewScratch new | TurnOnScratchBuffer
