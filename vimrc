@@ -510,7 +510,7 @@ win = vim.current.window
 row_n, col_n = win.cursor
 today = datetime.datetime.now().strftime('%A %B %d')
 
-vim.current.buffer[row_n - 1:row_n - 1] = [today, '~'*len(today), '']
+vim.current.buffer[row_n - 1:row_n - 1] = [today, '~' * len(today), '']
 win.cursor = (win.cursor[0], 0)
 vim.command('startinsert')
 
@@ -519,6 +519,44 @@ endfunction
 
 command! InsertToday call Insert_today()
 nnoremap <Leader>it :InsertToday<CR>
+
+highlight DoneCheck ctermfg=green
+
+function! Toggle_done()
+py3 << EOF
+import datetime
+import pathlib
+import sys
+import vim
+import re
+sys.path.append(
+    pathlib.Path('~/.vim').expanduser().as_posix()
+    )
+
+row_n, _ = vim.current.window.cursor
+has_check = '✔' in vim.current.buffer[row_n - 1]
+
+if not has_check:
+    matcher = re.compile('^(\s*-)(.*)$').match(vim.current.buffer[row_n - 1])
+    if matcher is None:
+        print('Not formatted correctly')
+    else:
+        vim.current.buffer[row_n -1 ] = matcher.group(1) + ' ✔' + matcher.group(2)
+else:
+    matcher = re.compile('^(\s*-)(\s+✔\s+)(.*)$').match(vim.current.buffer[row_n - 1])
+    if matcher is None:
+        print('Not formatted correctly')
+    else:
+        vim.current.buffer[row_n -1] = matcher.group(1) + ' ' + matcher.group(3)
+
+vim.command('match DoneCheck /✔.*$/')
+
+EOF
+endfunction
+
+command! ToggleDone call Toggle_done()
+nnoremap <Leader>id :ToggleDone<CR>
+" match  DoneCheck /✔.*$/
 
 command! -bar TurnOnScratchBuffer setlocal buflisted buftype=nofile bufhidden=hide noswapfile filetype=rst
 command! -bar TurnOffScratchBuffer setlocal buftype= bufhidden= swapfile
