@@ -200,7 +200,7 @@ if has("autocmd")
         \ endif
 
     " Remove trailing whitespaces on save
-    autocmd BufWritePre *.py,*.clj,*.cljs,*.js,*.sh,*.rb,*.scala,*.groovy,Dockerfile :%s/\s\+$//e
+    autocmd BufWritePre *.py,*.rst,*.txt,*.clj,*.cljs,*.js,*.sh,*.rb,*.scala,*.groovy,Dockerfile :%s/\s\+$//e
     autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
 
 endif
