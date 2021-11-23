@@ -3,29 +3,28 @@
 declare -a giturls
 
 giturls=(
+  # git://github.com/ConradIrwin/vim-bracketed-paste
+  # git://github.com/fatih/vim-go.git
   git://github.com/5long/pytest-vim-compiler.git
   git://github.com/AndrewRadev/linediff.vim.git
   git://github.com/AndrewRadev/splitjoin.vim.git
-  # git://github.com/ConradIrwin/vim-bracketed-paste
   git://github.com/JuliaEditorSupport/julia-vim.git
   git://github.com/SirVer/ultisnips.git
   git://github.com/airblade/vim-gitgutter.git
   git://github.com/cespare/vim-toml.git
   git://github.com/ctrlpvim/ctrlp.vim.git
   git://github.com/dag/vim-fish.git
-  git://github.com/jvirtanen/vim-hcl.git
   git://github.com/daveyarwood/vim-alda.git
   git://github.com/derekwyatt/vim-scala.git
   git://github.com/dyng/ctrlsf.vim.git
-  # git://github.com/fatih/vim-go.git
   git://github.com/fsharp/vim-fsharp.git
   git://github.com/guns/vim-clojure-highlight.git
   git://github.com/guns/vim-sexp.git
   git://github.com/hashivim/vim-terraform.git
   git://github.com/jamessan/vim-gnupg.git
-  git://github.com/jceb/vim-orgmode.git
   git://github.com/jiangmiao/auto-pairs.git
   git://github.com/jupyter-vim/jupyter-vim.git
+  git://github.com/jvirtanen/vim-hcl.git
   git://github.com/kien/rainbow_parentheses.vim.git
   git://github.com/leafgarland/typescript-vim.git
   git://github.com/michaeljsmith/vim-indent-object.git
@@ -52,6 +51,7 @@ giturls=(
   git://github.com/vim-scripts/confluencewiki.vim.git
   git://github.com/vim-syntastic/syntastic.git
   git://github.com/wlangstroth/vim-racket.git
+  git://github.com:axvr/org.vim.git
 )
 
 update_git() {

@@ -447,7 +447,7 @@ let g:yankring_map_dot = 0
 
 " rst edits
 nnoremap <silent> <Leader>bS :NewScratch<CR>
-nnoremap <silent> <Leader>bV :w !rst2html.py \| lynx -stdin<CR><CR>
+nnoremap <silent> <Leader>bV :w !editblogger -i -o \| lynx -stdin<CR><CR>
 
 " Git
 " nnoremap <silent> <Leader>fGb :Start git log -p -M --follow --stat -- %<CR>
@@ -520,7 +520,7 @@ endfunction
 command! InsertToday call Insert_today()
 nnoremap <Leader>it :InsertToday<CR>
 
-highlight DoneCheck ctermfg=green
+highlight DoneCheck ctermfg=194
 
 function! Toggle_done()
 py3 << EOF
@@ -578,3 +578,4 @@ augroup scratch_buffers
 augroup END
 
 set nofoldenable
+

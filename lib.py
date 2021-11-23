@@ -34,10 +34,13 @@ def fmt(file_type: bytes, buff: list):
         import sqlparse
         return sqlparse.format(
             buff,
-            keyword_case='upper',
             # identifier_case='lower',
-            reindent=True,
+            comma_fist=False,
+            indent_tabs=False,
             indent_width=2,
+            keyword_case='upper',
+            reindent=True,
+            reindent_aligned=True,
             use_space_around_operators=True,
             ).strip().split('\n')
     else:
