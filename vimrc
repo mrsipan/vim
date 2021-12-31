@@ -239,7 +239,7 @@ let g:clojure_align_multiline_strings = 1
 autocmd Syntax clojure RainbowParenthesesLoadRound
 autocmd Syntax clojure RainbowParenthesesLoadSquare
 autocmd Syntax clojure RainbowParenthesesLoadBraces
-autocmd Syntax clojure RainbowParenthesesLoadChevrons
+" autocmd Syntax clojure RainbowParenthesesLoadChevrons
 autocmd BufEnter *.clj,*.cljs RainbowParenthesesToggle
 autocmd BufLeave *.clj,*.cljs RainbowParenthesesToggle
 
@@ -254,6 +254,8 @@ let g:rbpt_colorpairs = [
      \ ['148', '#a2b6da'],
      \ ['145', '#9cb6ad']
      \ ]
+
+let g:rbpt_types = [['(',')'],['\[','\]'],['{','}']]
 
 let g:rbpt_max = 16
 " let g:rbpt_loadcmd_toggle = 0
@@ -456,7 +458,8 @@ nnoremap <silent> gGd :Start git diff \| diffr --colors refine-added:none:backgr
 nnoremap <silent> gGb :Start git blame % \| cut -d ' ' -f 2- \| ggrep -E --color=always '[0-9]+)' \| less -R -+F -C<CR>
 
 nnoremap <Leader>dc :cd %:p:h<CR>:pwd<CR>
-nnoremap <Leader>bp :w !editblogger -b mrsipan -i<CR><CR>
+" nnoremap <Leader>bp :w !editblogger -b mrsipan -i<CR><CR>
+nnoremap <Leader>bp :w !pandoc --from=org --to=rst \| sed 's/code:/colored-code:/g' \| editblogger -i -b salambria<CR><CR>
 
 " To work with kitty
 if !has('gui_running')
@@ -578,4 +581,6 @@ augroup scratch_buffers
 augroup END
 
 set nofoldenable
+
+let g:iced_enable_default_key_mappings = v:true
 

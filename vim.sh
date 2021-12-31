@@ -3,55 +3,58 @@
 declare -a giturls
 
 giturls=(
+  # git://github.com/5long/pytest-vim-compiler.git
   # git://github.com/ConradIrwin/vim-bracketed-paste
   # git://github.com/fatih/vim-go.git
-  git://github.com/5long/pytest-vim-compiler.git
-  git://github.com/AndrewRadev/linediff.vim.git
-  git://github.com/AndrewRadev/splitjoin.vim.git
-  git://github.com/JuliaEditorSupport/julia-vim.git
-  git://github.com/SirVer/ultisnips.git
-  git://github.com/airblade/vim-gitgutter.git
-  git://github.com/cespare/vim-toml.git
-  git://github.com/ctrlpvim/ctrlp.vim.git
-  git://github.com/dag/vim-fish.git
-  git://github.com/daveyarwood/vim-alda.git
-  git://github.com/derekwyatt/vim-scala.git
-  git://github.com/dyng/ctrlsf.vim.git
-  git://github.com/fsharp/vim-fsharp.git
-  git://github.com/guns/vim-clojure-highlight.git
-  git://github.com/guns/vim-sexp.git
-  git://github.com/hashivim/vim-terraform.git
-  git://github.com/jamessan/vim-gnupg.git
-  git://github.com/jiangmiao/auto-pairs.git
-  git://github.com/jupyter-vim/jupyter-vim.git
-  git://github.com/jvirtanen/vim-hcl.git
-  git://github.com/kien/rainbow_parentheses.vim.git
-  git://github.com/leafgarland/typescript-vim.git
-  git://github.com/michaeljsmith/vim-indent-object.git
-  git://github.com/mrsipan/ctrlp-py-matcher.git
-  git://github.com/mrsipan/vim-python.git
-  git://github.com/mrsipan/vim-rst.git
-  git://github.com/mrsipan/vim-simple8-theme.git
-  git://github.com/mrsipan/vim-sipan-theme.git
-  git://github.com/pangloss/vim-javascript.git
-  git://github.com/tmhedberg/matchit.git
-  git://github.com/tommcdo/vim-exchange.git
-  git://github.com/tpope/vim-classpath.git
-  git://github.com/tpope/vim-commentary.git
-  git://github.com/tpope/vim-dispatch.git
-  git://github.com/tpope/vim-endwise.git
-  git://github.com/tpope/vim-eunuch.git
-  git://github.com/tpope/vim-fireplace.git
-  git://github.com/tpope/vim-repeat.git
-  git://github.com/tpope/vim-speeddating.git
-  git://github.com/tpope/vim-surround.git
-  git://github.com/tpope/vim-vinegar.git
-  git://github.com/vim-ruby/vim-ruby.git
-  git://github.com/vim-scripts/YankRing.vim.git
-  git://github.com/vim-scripts/confluencewiki.vim.git
-  git://github.com/vim-syntastic/syntastic.git
-  git://github.com/wlangstroth/vim-racket.git
-  git://github.com:axvr/org.vim.git
+  # https://github.com/AndrewRadev/linediff.vim.git
+  # https://github.com/clojure-vim/clojure.vim.git
+  # https://github.com/dag/vim-fish.git
+  # https://github.com/guns/vim-clojure-highlight.git
+  # https://github.com/jamessan/vim-gnupg.git
+  # https://github.com/jupyter-vim/jupyter-vim.git
+  # https://github.com/tpope/vim-fireplace.git
+  # https://github.com/wlangstroth/vim-racket.git
+  https://github.com/AndrewRadev/splitjoin.vim.git
+  https://github.com/JuliaEditorSupport/julia-vim.git
+  https://github.com/SirVer/ultisnips.git
+  https://github.com/airblade/vim-gitgutter.git
+  https://github.com/axvr/org.vim.git
+  https://github.com/cespare/vim-toml.git
+  https://github.com/ctrlpvim/ctrlp.vim.git
+  https://github.com/daveyarwood/vim-alda.git
+  https://github.com/derekwyatt/vim-scala.git
+  https://github.com/dyng/ctrlsf.vim.git
+  https://github.com/fsharp/vim-fsharp.git
+  https://github.com/guns/vim-sexp.git
+  https://github.com/hashivim/vim-terraform.git
+  https://github.com/jiangmiao/auto-pairs.git
+  https://github.com/jvirtanen/vim-hcl.git
+  https://github.com/leafgarland/typescript-vim.git
+  https://github.com/liquidz/vim-iced.git
+  https://github.com/michaeljsmith/vim-indent-object.git
+  https://github.com/mrsipan/ctrlp-py-matcher.git
+  https://github.com/mrsipan/rainbow_parentheses.vim.git
+  https://github.com/mrsipan/vim-python.git
+  https://github.com/mrsipan/vim-rst.git
+  https://github.com/mrsipan/vim-simple8-theme.git
+  https://github.com/mrsipan/vim-sipan-theme.git
+  https://github.com/pangloss/vim-javascript.git
+  https://github.com/reasonml-editor/vim-reason-plus.git
+  https://github.com/tmhedberg/matchit.git
+  https://github.com/tommcdo/vim-exchange.git
+  https://github.com/tpope/vim-classpath.git
+  https://github.com/tpope/vim-commentary.git
+  https://github.com/tpope/vim-dispatch.git
+  https://github.com/tpope/vim-endwise.git
+  https://github.com/tpope/vim-eunuch.git
+  https://github.com/tpope/vim-repeat.git
+  https://github.com/tpope/vim-speeddating.git
+  https://github.com/tpope/vim-surround.git
+  https://github.com/tpope/vim-vinegar.git
+  https://github.com/vim-ruby/vim-ruby.git
+  https://github.com/vim-scripts/YankRing.vim.git
+  https://github.com/vim-scripts/confluencewiki.vim.git
+  https://github.com/vim-syntastic/syntastic.git
 )
 
 update_git() {
